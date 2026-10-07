@@ -35,69 +35,21 @@ def norm(value: str) -> str:
     return " ".join(value.casefold().strip().split())
 
 
-# Default official container commands in Velneo MTI
-CONTAINERS = {
+# Contenedores mínimos de fallback si no se carga el catálogo completo
+DEFAULT_CONTAINERS = {
     "if",
     "else",
     "else if",
-    "for",
-    "recorrer buffer",
     "cargar lista",
     "cargar plurales",
-    "cargar maestros",
-    "recorrer lista solo lectura",
-    "recorrer lista lectura/escritura",
-    "recorrer lista eliminando fichas",
-    "recorrer lista eliminando fichas sin desactualizar",
-    "recorrer directorio",
-    "bd: recorrer lista",
-    "multipartir lista",
-    "multipartir lista por nº de registros",
-    "disparar objeto",
-    "ejecutar proceso",
-    "leer ficha seleccionada",
-    "leer ficha de maestro",
-    "seleccionar ficha de la lista",
     "crear nueva ficha en memoria",
-    "alta de ficha",
     "modificar ficha seleccionada",
     "modificar ficha de maestro",
-    "modificar ficha seleccionada con formulario",
-    "procesar ficha en memoria",
-    "cesta: procesar",
-    "fichero: abrir",
-    "leer registro",
-    "crear o modificar ficha desde json",
-    "crear o modificar lista desde json",
-    "tubo de ficha",
-    "tubo de lista",
-    "eliminar la ficha seleccionada",
-    "localizador",
-    "interfaz: procesar",
-    "interfaz: obtener la multi-seleccion",
-    "interfaz: obtener la ficha en edicion de la rejilla",
-}
-
-# Commands that take strictly 0 parameters in Velneo ([])
-KNOWN_ZERO_PARAM_COMMANDS = {
-    "else",
-    "finalizar proceso",
-    "set retorno proceso = no",
-    "set retorno proceso = si",
-    "anadir lista a la salida",
-    "anadir ficha a la salida",
-    "leer ficha seleccionada",
-    "modificar ficha seleccionada",
     "recorrer lista solo lectura",
     "recorrer lista lectura/escritura",
     "recorrer lista eliminando fichas",
     "recorrer lista eliminando fichas sin desactualizar",
-    "interfaz: aceptar",
-    "interfaz: cancelar",
-    "interfaz: recalcular",
-    "interfaz: guardar la ficha en alta o modificacion",
-    "cesta: limpiar cesta local",
-    "libre",
+    "bd: recorrer lista"
 }
 
 
@@ -347,8 +299,8 @@ def validate(
     last_at_level: dict[int, str] = {}
     last_item_at_level: dict[int, dict[str, Any]] = {}
 
-    all_containers = CONTAINERS | extra_containers
-    all_cmd_names = [v["nombre"] for v in catalog.values()] if catalog else list(CONTAINERS)
+    all_containers = (extra_containers or set()) | DEFAULT_CONTAINERS
+    all_cmd_names = [v["nombre"] for v in catalog.values()] if catalog else list(DEFAULT_CONTAINERS)
 
     for index, item in enumerate(items, start=1):
         prefix = f"Línea {index}"
@@ -444,36 +396,8 @@ def validate(
                     "las instrucciones dependientes de la lista no pueden ser hermanas de la carga"
                 )
 
-        # Comandos con límites estrictos innegociables de parámetros en Velneo MTI
-        STRICT_PARAM_BOUNDS = {
-            "if": (1, 1),
-            "else if": (1, 1),
-            "set": (2, 2),
-            "rem": (0, 1),
-            "set dato de retorno": (1, 1),
-            "seleccionar ficha por posicion": (1, 1),
-            "leer ficha seleccionada": (0, 0),
-            "filtrar lista": (1, 2),
-            "modificar campo": (2, 2),
-        }
-
         # Verificación contra el Catálogo de Comandos
-        if command_n in KNOWN_ZERO_PARAM_COMMANDS:
-            if len(params) > 0:
-                errors.append(
-                    f"{prefix}: '{command}' no admite parámetros ([]); se pasaron {len(params)}"
-                )
-        elif command_n in STRICT_PARAM_BOUNDS:
-            p_min, p_max = STRICT_PARAM_BOUNDS[command_n]
-            if len(params) > p_max:
-                errors.append(
-                    f"{prefix}: '{command}' tiene {len(params)} parámetros; el catálogo define un máximo estricto de {p_max}"
-                )
-            elif len(params) < p_min:
-                errors.append(
-                    f"{prefix}: '{command}' requiere al menos {p_min} parámetro(s); se pasaron {len(params)}"
-                )
-        elif command_n and command_n not in all_containers and command_n not in catalog:
+        if command_n and command_n not in all_containers and command_n not in catalog:
             close_matches = difflib.get_close_matches(command, all_cmd_names, n=2, cutoff=0.6)
             err_msg = f"{prefix}: El comando no existe en el catálogo canónico de Velneo: '{command}'"
             if close_matches:
@@ -484,11 +408,15 @@ def validate(
             meta = catalog[command_n]
             p_max = meta.get("paramsMax", 6)
             p_min = meta.get("paramsMin", 0)
-            if p_min > 0 and len(params) < p_min:
+            if p_max == 0 and len(params) > 0:
+                errors.append(
+                    f"{prefix}: '{command}' no admite parámetros ([]); se pasaron {len(params)}"
+                )
+            elif p_min > 0 and len(params) < p_min:
                 errors.append(
                     f"{prefix}: '{command}' requiere al menos {p_min} parámetro(s); se pasaron {len(params)}"
                 )
-            elif p_max > 0 and len(params) == 0 and command_n not in KNOWN_ZERO_PARAM_COMMANDS:
+            elif p_max > 0 and len(params) == 0:
                 errors.append(
                     f"{prefix}: '{command}' espera parámetros pero se pasaron 0"
                 )

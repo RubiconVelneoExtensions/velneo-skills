@@ -1,44 +1,18 @@
 #!/usr/bin/env node
 /**
- * validador.js — Puente Node.js y CLI para ValidadorComandos.js
+ * validador.js — CLI y módulo Node.js para validación de código Velneo
  * 
- * Permite usar el validador y catálogo de comandos Velneo desde:
- * 1. CLI directo: node validador.js target.json
+ * Uso:
+ * 1. CLI directo: node validador.js <archivo.json>
  * 2. Node.js require: const validador = require('./validador.js');
- * 3. Puente MCP: mcp-server/server.js
  */
 
 const fs = require('fs');
-const path = require('path');
-const vm = require('vm');
-
-function cargarValidador() {
-    const validadorPath = path.join(__dirname, 'ValidadorComandos.js');
-    let code = fs.readFileSync(validadorPath, 'utf8');
-    // Eliminar directivas exclusivas de QML (.pragma y .import)
-    code = code.replace(/^\.pragma[^\r\n]*[\r\n]+/m, '');
-    code = code.replace(/^\.import[^\r\n]*[\r\n]+/gm, '');
-
-    const mod = { exports: {} };
-    const ctx = vm.createContext({
-        module: mod,
-        exports: mod.exports,
-        console: console,
-        process: process,
-        require: require,
-        __dirname: __dirname,
-        __filename: validadorPath
-    });
-
-    vm.runInContext(code, ctx);
-    return mod.exports;
-}
-
-const api = cargarValidador();
+const api = require('./ValidadorComandos.js');
 
 api.ejecutarCli = function(args) {
     if (!args || args.length === 0 || args[0] === '--help' || args[0] === '-h') {
-        console.log('Validador Oficial de Código Velneo (Puente Guía / Antigravity)');
+        console.log('Validador Oficial de Código Velneo (velneo-skills)');
         console.log('Catálogo exhaustivo de 177 comandos clasificados por versiones de Velneo.');
         console.log('\nUso:');
         console.log('  node validador.js <archivo.json>        Valida un archivo JSON de instrucciones.');

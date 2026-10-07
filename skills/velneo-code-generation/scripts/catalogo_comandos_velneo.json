@@ -338,7 +338,7 @@
       "version": "v7_0",
       "categoria": "Variables",
       "esContenedor": false,
-      "paramsMin": 0,
+      "paramsMin": 3,
       "paramsMax": 3,
       "descripcion": "Establece el valor de una variable local en un objeto instanciado.",
       "params": [
@@ -376,8 +376,8 @@
       "version": "v16_v22",
       "categoria": "Scripting",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Ejecuta un bloque de script JavaScript o QML en el motor V8 integrado.",
       "params": [
         {
@@ -388,51 +388,6 @@
             "Default(907)"
           ],
           "ejemplo": "(CurrentProject)/js/personaliz"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(907)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(907)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(907)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(907)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(907)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -441,8 +396,8 @@
       "version": "v7_0",
       "categoria": "Lista",
       "esContenedor": true,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 2,
+      "paramsMax": 2,
       "descripcion": "Carga una lista de registros aplicando un índice o condición (contenedor).",
       "params": [
         {
@@ -462,46 +417,6 @@
             "Default(782)"
           ],
           "ejemplo": "ID"
-        },
-        {
-          "props": [
-            "ID - Código",
-            "USR - Usuario"
-          ],
-          "edits": [
-            "Default(782)"
-          ],
-          "ejemplo": "#ASI"
-        },
-        {
-          "props": [
-            "Fórmula de resolución (opcional)",
-            "EMP - Empresa"
-          ],
-          "edits": [
-            "Default(782)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            "Fórmula de resolución (opcional)",
-            "TIP - Tipos"
-          ],
-          "edits": [
-            "Default(782)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            "Fórmula de resolución (opcional)",
-            "POR - Porcentaje"
-          ],
-          "edits": [
-            "Default(782)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -510,8 +425,8 @@
       "version": "v7_0",
       "categoria": "Procesos y objetos",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 4,
+      "paramsMin": 3,
+      "paramsMax": 3,
       "descripcion": "Crea una instancia de un objeto Velneo (proceso, formulario, búsqueda).",
       "params": [
         {
@@ -540,15 +455,6 @@
             "Default(659)"
           ],
           "ejemplo": ""
-        },
-        {
-          "props": [
-            "Fórmula de título opcional (opcional)"
-          ],
-          "edits": [
-            "Default(659)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -557,8 +463,8 @@
       "version": "v7_0",
       "categoria": "Procesos y objetos",
       "esContenedor": true,
-      "paramsMin": 0,
-      "paramsMax": 4,
+      "paramsMin": 2,
+      "paramsMax": 2,
       "descripcion": "Ejecuta el objeto referenciado por un manejador (contenedor de resultados).",
       "params": [
         {
@@ -578,24 +484,6 @@
             "Default(661)"
           ],
           "ejemplo": "3"
-        },
-        {
-          "props": [
-            "Identificador de variable local booleana de retorno de ok (opcional)"
-          ],
-          "edits": [
-            "Default(661)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            "Identificador de cola (opcional)"
-          ],
-          "edits": [
-            "Default(661)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -604,8 +492,8 @@
       "version": "v7_0",
       "categoria": "Interfaz",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 2,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Dispara la ejecución de un manejador de eventos del formulario.",
       "params": [
         {
@@ -616,15 +504,6 @@
             "Default(639)"
           ],
           "ejemplo": "BUS"
-        },
-        {
-          "props": [
-            "Identificador de variable local booleana de retorno de ok (opcional)"
-          ],
-          "edits": [
-            "Default(639)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -633,7 +512,7 @@
       "version": "v7_0",
       "categoria": "Variables",
       "esContenedor": false,
-      "paramsMin": 0,
+      "paramsMin": 3,
       "paramsMax": 3,
       "descripcion": "Recupera el valor de una variable local de un objeto instanciado.",
       "params": [
@@ -671,8 +550,8 @@
       "version": "v7_0",
       "categoria": "Lista",
       "esContenedor": true,
-      "paramsMin": 0,
-      "paramsMax": 5,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Carga los registros plurales asociados al registro maestro en curso (contenedor).",
       "params": [
         {
@@ -683,42 +562,6 @@
             "Default(440)"
           ],
           "ejemplo": "VTO_COB_C_APU"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(440)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(440)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(440)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(440)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -747,8 +590,8 @@
       "version": "v7_0",
       "categoria": "Variables",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 3,
+      "paramsMin": 2,
+      "paramsMax": 2,
       "descripcion": "Asigna un nuevo valor a una variable global del proyecto.",
       "params": [
         {
@@ -768,15 +611,6 @@
             "Default(392)"
           ],
           "ejemplo": "#ANI_DCK_MS"
-        },
-        {
-          "props": [
-            "Identificador de variable local de retorno (opcional)"
-          ],
-          "edits": [
-            "Default(392)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -785,7 +619,7 @@
       "version": "v7_0",
       "categoria": "Diálogos y avisos",
       "esContenedor": false,
-      "paramsMin": 0,
+      "paramsMin": 1,
       "paramsMax": 4,
       "descripcion": "Muestra un cuadro de diálogo con mensaje al usuario (Información, Aviso, etc.).",
       "params": [
@@ -815,15 +649,6 @@
             "Default(414)"
           ],
           "ejemplo": "10"
-        },
-        {
-          "props": [
-            "Fórmula de título opcional (opcional)"
-          ],
-          "edits": [
-            "Default(414)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -855,62 +680,7 @@
       "paramsMin": 0,
       "paramsMax": 0,
       "descripcion": "Ejecuta las instrucciones hijas si la condición del If o Else if previo evaluó a falso.",
-      "params": [
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(517)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(517)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(517)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(517)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(517)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(517)"
-          ],
-          "ejemplo": ""
-        }
-      ]
+      "params": []
     },
     "Finalizar proceso": {
       "nombre": "Finalizar proceso",
@@ -920,69 +690,14 @@
       "paramsMin": 0,
       "paramsMax": 0,
       "descripcion": "Finaliza inmediatamente la ejecución del proceso actual.",
-      "params": [
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(577)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(577)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(577)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(577)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(577)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(577)"
-          ],
-          "ejemplo": ""
-        }
-      ]
+      "params": []
     },
     "Alta de ficha": {
       "nombre": "Alta de ficha",
       "version": "v7_0",
       "categoria": "Ficha",
       "esContenedor": true,
-      "paramsMin": 1,
+      "paramsMin": 0,
       "paramsMax": 1,
       "descripcion": "Persiste el registro en la base de datos (contenedor: sus hijos actúan sobre el registro guardado).",
       "params": [
@@ -1012,8 +727,8 @@
       "version": "v7_0",
       "categoria": "Ficha",
       "esContenedor": true,
-      "paramsMin": 0,
-      "paramsMax": 3,
+      "paramsMin": 2,
+      "paramsMax": 2,
       "descripcion": "Crea un nuevo registro en memoria RAM para asignación previa al alta.",
       "params": [
         {
@@ -1033,15 +748,6 @@
             "Default(387)"
           ],
           "ejemplo": "4ek4uta3.vcd@CBA_CAB_C"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(387)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -1053,70 +759,15 @@
       "paramsMin": 0,
       "paramsMax": 0,
       "descripcion": "Agrega la lista en curso a la lista de salida del proceso.",
-      "params": [
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(278)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(278)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(278)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(278)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(278)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(278)"
-          ],
-          "ejemplo": ""
-        }
-      ]
+      "params": []
     },
     "Interfaz: Procesar": {
       "nombre": "Interfaz: Procesar",
       "version": "v7_0",
       "categoria": "Interfaz",
       "esContenedor": true,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 2,
+      "paramsMax": 2,
       "descripcion": "Accede a la lista de registros de un control visual (rejilla/árbol) en el formulario (contenedor).",
       "params": [
         {
@@ -1136,42 +787,6 @@
             "Default(296)"
           ],
           "ejemplo": "0"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(296)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(296)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(296)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(296)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -1180,8 +795,8 @@
       "version": "v7_0",
       "categoria": "Interfaz",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Mueve el foco del teclado al control especificado.",
       "params": [
         {
@@ -1192,51 +807,6 @@
             "Default(256)"
           ],
           "ejemplo": "LST"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(256)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(256)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(256)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(256)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(256)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -1248,69 +818,14 @@
       "paramsMin": 0,
       "paramsMax": 0,
       "descripcion": "Itera sobre la lista en modo lectura eficiente por bloques (contenedor).",
-      "params": [
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(300)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(300)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(300)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(300)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(300)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(300)"
-          ],
-          "ejemplo": ""
-        }
-      ]
+      "params": []
     },
     "Cesta: Crear cesta local": {
       "nombre": "Cesta: Crear cesta local",
       "version": "v7_0",
       "categoria": "Cestas",
       "esContenedor": false,
-      "paramsMin": 0,
+      "paramsMin": 2,
       "paramsMax": 2,
       "descripcion": "Crea una cesta temporal en memoria para acumular registros.",
       "params": [
@@ -1339,7 +854,7 @@
       "version": "v7_0",
       "categoria": "Cestas",
       "esContenedor": false,
-      "paramsMin": 0,
+      "paramsMin": 1,
       "paramsMax": 1,
       "descripcion": "Añade todos los registros de la lista actual a la cesta indicada.",
       "params": [
@@ -1359,7 +874,7 @@
       "version": "v7_0",
       "categoria": "Lista",
       "esContenedor": false,
-      "paramsMin": 0,
+      "paramsMin": 1,
       "paramsMax": 2,
       "descripcion": "Recorta la lista quedándose con una subsección de registros.",
       "params": [
@@ -1371,15 +886,6 @@
             "Default(199)"
           ],
           "ejemplo": "0"
-        },
-        {
-          "props": [
-            "Fórmula de posición (opcional)"
-          ],
-          "edits": [
-            "Default(199)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -1389,72 +895,17 @@
       "categoria": "Control de flujo",
       "esContenedor": false,
       "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMax": 0,
       "descripcion": "Establece el retorno del proceso a NO/FALSO (útil para cancelar eventos o triggers).",
-      "params": [
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(237)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(237)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(237)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(237)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(237)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(237)"
-          ],
-          "ejemplo": ""
-        }
-      ]
+      "params": []
     },
     "Modificar campo solamente": {
       "nombre": "Modificar campo solamente",
       "version": "v7_0",
       "categoria": "Ficha",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 2,
+      "paramsMax": 2,
       "descripcion": "Modifica el campo en memoria sin disparar actualizaciones inmediatas.",
       "params": [
         {
@@ -1474,42 +925,6 @@
             "Default(140)"
           ],
           "ejemplo": "OFF"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(140)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(140)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(140)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(140)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -1518,8 +933,8 @@
       "version": "v7_0",
       "categoria": "Cestas",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Agrega los registros contenidos en la cesta a la lista actual.",
       "params": [
         {
@@ -1530,51 +945,6 @@
             "Default(169)"
           ],
           "ejemplo": ".cesta"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(169)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(169)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(169)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(169)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(169)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -1603,8 +973,8 @@
       "version": "v23_v27",
       "categoria": "Arrays",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 3,
+      "paramsMax": 3,
       "descripcion": "Asigna un valor a una posición concreta de una variable array.",
       "params": [
         {
@@ -1633,33 +1003,6 @@
             "Default(120)"
           ],
           "ejemplo": "\"N\""
-        },
-        {
-          "props": [
-            "Identificador de variable local booleana de retorno de ok (opcional)"
-          ],
-          "edits": [
-            "Default(120)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(120)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(120)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -1668,8 +1011,8 @@
       "version": "v7_0",
       "categoria": "Lista",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 2,
       "descripcion": "Ordena la lista en memoria según las partes de índice o campos especificados.",
       "params": [
         {
@@ -1689,42 +1032,6 @@
             "Default(127)"
           ],
           "ejemplo": "#HOR"
-        },
-        {
-          "props": [
-            "Campo de resolución (opcional)"
-          ],
-          "edits": [
-            "Default(127)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            "Campo de resolución (opcional)"
-          ],
-          "edits": [
-            "Default(127)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            "Campo de resolución (opcional)"
-          ],
-          "edits": [
-            "Default(127)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            "Campo de resolución (opcional)"
-          ],
-          "edits": [
-            "Default(127)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -1733,8 +1040,8 @@
       "version": "v7_0",
       "categoria": "Procesos y objetos",
       "esContenedor": true,
-      "paramsMin": 0,
-      "paramsMax": 5,
+      "paramsMin": 2,
+      "paramsMax": 2,
       "descripcion": "Ejecuta sincrónicamente un subproceso Velneo (contenedor).",
       "params": [
         {
@@ -1754,33 +1061,6 @@
             "Default(121)"
           ],
           "ejemplo": "0"
-        },
-        {
-          "props": [
-            "Identificador de variable local booleana de retorno de ok (opcional)"
-          ],
-          "edits": [
-            "Default(121)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            "Identificador de variable local de retorno (opcional)"
-          ],
-          "edits": [
-            "Default(121)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            "Identificador de cola (opcional)"
-          ],
-          "edits": [
-            "Default(121)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -1792,69 +1072,14 @@
       "paramsMin": 0,
       "paramsMax": 0,
       "descripcion": "Itera sobre la lista permitiendo modificar campos registro a registro (contenedor).",
-      "params": [
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(145)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(145)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(145)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(145)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(145)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(145)"
-          ],
-          "ejemplo": ""
-        }
-      ]
+      "params": []
     },
     "Añadir ficha al objeto": {
       "nombre": "Añadir ficha al objeto",
       "version": "v7_0",
       "categoria": "Procesos y objetos",
       "esContenedor": false,
-      "paramsMin": 0,
+      "paramsMin": 1,
       "paramsMax": 1,
       "descripcion": "Pasa una ficha de entrada al manejador de objeto instanciado.",
       "params": [
@@ -1875,15 +1100,9 @@
       "categoria": "Interfaz",
       "esContenedor": false,
       "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMax": 0,
       "descripcion": "Fuerza el recálculo y repintado de un control de la interfaz (o todo el formulario si se omite).",
-      "params": [
-        {
-          "prop": "Identificador de control (opcional)",
-          "edit": "Default",
-          "ejemplo": "LST"
-        }
-      ]
+      "params": []
     },
     "Filtrar lista": {
       "nombre": "Filtrar lista",
@@ -1902,15 +1121,6 @@
             "Default(104)"
           ],
           "ejemplo": "( #IMP_GTO = 0 )"
-        },
-        {
-          "props": [
-            "Fórmula de porcentaje que realiza del proceso (opcional)"
-          ],
-          "edits": [
-            "Default(104)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -1920,72 +1130,17 @@
       "categoria": "Ficha",
       "esContenedor": true,
       "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMax": 0,
       "descripcion": "Inicia un bloque de modificación sobre el registro seleccionado.",
-      "params": [
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(170)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(170)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(170)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(170)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(170)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(170)"
-          ],
-          "ejemplo": ""
-        }
-      ]
+      "params": []
     },
     "Interfaz: Formulario de alta": {
       "nombre": "Interfaz: Formulario de alta",
       "version": "v7_0",
       "categoria": "Interfaz",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Abre el formulario modal de alta para la tabla especificada.",
       "params": [
         {
@@ -1996,51 +1151,6 @@
             "Default(87)"
           ],
           "ejemplo": "LST"
-        },
-        {
-          "props": [
-            "Identificador de variable local booleana de retorno de ok (opcional)"
-          ],
-          "edits": [
-            "Default(87)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(87)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(87)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(87)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(87)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -2070,71 +1180,16 @@
       "categoria": "Lista",
       "esContenedor": true,
       "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMax": 0,
       "descripcion": "Itera sobre la lista eliminando cada registro procesado (contenedor).",
-      "params": [
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(140)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(140)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(140)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(140)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(140)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(140)"
-          ],
-          "ejemplo": ""
-        }
-      ]
+      "params": []
     },
     "Multipartir lista": {
       "nombre": "Multipartir lista",
       "version": "v7_0",
       "categoria": "Lista",
       "esContenedor": true,
-      "paramsMin": 0,
+      "paramsMin": 1,
       "paramsMax": 1,
       "descripcion": "Divide la lista en múltiples sublistas por valor de clave (contenedor).",
       "params": [
@@ -2154,7 +1209,7 @@
       "version": "v7_0",
       "categoria": "Lista",
       "esContenedor": true,
-      "paramsMin": 0,
+      "paramsMin": 1,
       "paramsMax": 1,
       "descripcion": "Carga los registros maestros correspondientes a los registros de la lista (contenedor).",
       "params": [
@@ -2174,7 +1229,7 @@
       "version": "v7_0",
       "categoria": "Cestas",
       "esContenedor": true,
-      "paramsMin": 0,
+      "paramsMin": 1,
       "paramsMax": 1,
       "descripcion": "Procesa los registros contenidos en la cesta (contenedor).",
       "params": [
@@ -2194,8 +1249,8 @@
       "version": "v7_0",
       "categoria": "Interfaz",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Oculta un control del formulario visual.",
       "params": [
         {
@@ -2206,51 +1261,6 @@
             "Default(71)"
           ],
           "ejemplo": ".34  4ekd5b99.vca@AUTOEXEC.STA"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(71)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(71)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(71)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(71)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(71)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -2259,8 +1269,8 @@
       "version": "v23_v27",
       "categoria": "Interfaz",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 3,
+      "paramsMax": 3,
       "descripcion": "Asigna una variable local en la vista de datos activa.",
       "params": [
         {
@@ -2289,33 +1299,6 @@
             "Default(67)"
           ],
           "ejemplo": "#ID"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(67)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(67)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(67)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -2327,62 +1310,7 @@
       "paramsMin": 0,
       "paramsMax": 0,
       "descripcion": "Agrega la ficha en curso a la ficha de salida del proceso.",
-      "params": [
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(73)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(73)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(73)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(73)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(73)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(73)"
-          ],
-          "ejemplo": ""
-        }
-      ]
+      "params": []
     },
     "Invertir lista": {
       "nombre": "Invertir lista",
@@ -2409,8 +1337,8 @@
       "version": "v16_v22",
       "categoria": "Interfaz",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 3,
+      "paramsMax": 3,
       "descripcion": "Muestra una notificación emergente/toast en la interfaz de usuario.",
       "params": [
         {
@@ -2439,33 +1367,6 @@
             "Default(70)"
           ],
           "ejemplo": ""
-        },
-        {
-          "props": [
-            "Fórmula de tiempo de espera en segundos, por defecto 7 (opcional)"
-          ],
-          "edits": [
-            "Default(70)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(70)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(70)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -2474,8 +1375,8 @@
       "version": "v7_0",
       "categoria": "Diálogos y avisos",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Abre un formulario modal para captura de datos.",
       "params": [
         {
@@ -2486,51 +1387,6 @@
             "Default(65)"
           ],
           "ejemplo": "4ekd5b99.vca@ENT_M"
-        },
-        {
-          "props": [
-            "Identificador de variable local booleana de retorno de ok (opcional)"
-          ],
-          "edits": [
-            "Default(65)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(65)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(65)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(65)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(65)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -2539,7 +1395,7 @@
       "version": "v7_0",
       "categoria": "Control de flujo",
       "esContenedor": true,
-      "paramsMin": 0,
+      "paramsMin": 3,
       "paramsMax": 4,
       "descripcion": "Bucle que itera desde un valor inicial hasta uno final con paso configurable.",
       "params": [
@@ -2586,7 +1442,7 @@
       "version": "v7_0",
       "categoria": "Procesos y objetos",
       "esContenedor": false,
-      "paramsMin": 0,
+      "paramsMin": 1,
       "paramsMax": 1,
       "descripcion": "Pasa una lista de entrada al manejador de objeto instanciado.",
       "params": [
@@ -2606,8 +1462,8 @@
       "version": "v7_0",
       "categoria": "Interfaz",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Deshabilita un control de la interfaz bloqueando interacción.",
       "params": [
         {
@@ -2618,51 +1474,6 @@
             "Default(49)"
           ],
           "ejemplo": "PGC"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(49)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(49)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(49)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(49)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(49)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -2671,8 +1482,8 @@
       "version": "v7_0",
       "categoria": "Diálogos y avisos",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 3,
+      "paramsMin": 2,
+      "paramsMax": 2,
       "descripcion": "Muestra un diálogo de confirmación con opciones Sí/No al usuario.",
       "params": [
         {
@@ -2692,15 +1503,6 @@
             "Default(47)"
           ],
           "ejemplo": "OK"
-        },
-        {
-          "props": [
-            "Fórmula de título opcional (opcional)"
-          ],
-          "edits": [
-            "Default(47)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -2709,8 +1511,8 @@
       "version": "v7_0",
       "categoria": "Interfaz",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Hace visible un control previamente oculto en el formulario.",
       "params": [
         {
@@ -2721,51 +1523,6 @@
             "Default(44)"
           ],
           "ejemplo": ".34  4ekd5b99.vca@AUTOEXEC.STA"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(44)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(44)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(44)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(44)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(44)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -2774,8 +1531,8 @@
       "version": "v16_v22",
       "categoria": "Interfaz",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Oculta una acción en la interfaz.",
       "params": [
         {
@@ -2786,51 +1543,6 @@
             "Default(43)"
           ],
           "ejemplo": "4ekd5b99.vca@FIR_SIG_CHG_SIG_E"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(43)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(43)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(43)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(43)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(43)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -2839,8 +1551,8 @@
       "version": "v7_0",
       "categoria": "Transacciones y tablas",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 5,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Actualiza el progreso porcentual mostrado en la barra de tareas o diálogo.",
       "params": [
         {
@@ -2851,42 +1563,6 @@
             "Default(39)"
           ],
           "ejemplo": "round( ( REG_ACT * 100 ) / ( R"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(39)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(39)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(39)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(39)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -2895,8 +1571,8 @@
       "version": "v16_v22",
       "categoria": "Interfaz",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Ejecuta la acción de interfaz indicada.",
       "params": [
         {
@@ -2907,51 +1583,6 @@
             "Default(43)"
           ],
           "ejemplo": "4ekd5b99.vca@PRO_2P"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(43)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(43)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(43)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(43)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(43)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -2960,7 +1591,7 @@
       "version": "v7_0",
       "categoria": "Cestas",
       "esContenedor": false,
-      "paramsMin": 0,
+      "paramsMin": 1,
       "paramsMax": 1,
       "descripcion": "Añade la ficha en curso a la cesta indicada.",
       "params": [
@@ -2980,8 +1611,8 @@
       "version": "v16_v22",
       "categoria": "Interfaz",
       "esContenedor": true,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Obtiene la lista de registros seleccionados en una rejilla con multi-selección (contenedor).",
       "params": [
         {
@@ -2992,51 +1623,6 @@
             "Default(30)"
           ],
           "ejemplo": "APU"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(30)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(30)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(30)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(30)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(30)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -3045,8 +1631,8 @@
       "version": "v7_0",
       "categoria": "Ficheros y sistema",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 2,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Abre un fichero con la aplicación predeterminada del sistema operativo.",
       "params": [
         {
@@ -3057,15 +1643,6 @@
             "Default(30)"
           ],
           "ejemplo": "#URL"
-        },
-        {
-          "props": [
-            "Identificador de variable local booleana de retorno de ok (opcional)"
-          ],
-          "edits": [
-            "Default(30)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -3074,8 +1651,8 @@
       "version": "v23_v27",
       "categoria": "Interfaz",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 2,
+      "paramsMax": 2,
       "descripcion": "Activa una pestaña o subformulario en un contenedor.",
       "params": [
         {
@@ -3095,42 +1672,6 @@
             "Default(29)"
           ],
           "ejemplo": "TOP_VTA_CLT"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(29)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(29)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(29)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(29)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -3139,8 +1680,8 @@
       "version": "v7_0",
       "categoria": "Ficha",
       "esContenedor": true,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Inicia un bloque de modificación sobre el registro maestro enlazado.",
       "params": [
         {
@@ -3151,51 +1692,6 @@
             "Default(30)"
           ],
           "ejemplo": "ASI"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(30)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(30)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(30)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(30)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(30)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -3204,8 +1700,8 @@
       "version": "v28_v32",
       "categoria": "Sistema y diagnóstico",
       "esContenedor": true,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 4,
+      "paramsMax": 4,
       "descripcion": "Lee un registro de configuración o log del sistema (contenedor).",
       "params": [
         {
@@ -3244,26 +1740,6 @@
             "Default(26)"
           ],
           "ejemplo": "1"
-        },
-        {
-          "props": [
-            "Fórmula de resolución (opcional)",
-            "AUX_BCO - Banco"
-          ],
-          "edits": [
-            "Default(26)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            "Fórmula de resolución (opcional)",
-            "FCH - Fecha"
-          ],
-          "edits": [
-            "Default(26)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -3272,8 +1748,8 @@
       "version": "v7_0",
       "categoria": "Ficha",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 2,
+      "paramsMax": 2,
       "descripcion": "Verifica si el valor de un campo ha variado (típico en triggers de tabla).",
       "params": [
         {
@@ -3293,42 +1769,6 @@
             "Default(21)"
           ],
           "ejemplo": "EMP_CHG"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(21)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(21)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(21)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(21)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -3337,8 +1777,8 @@
       "version": "v7_0",
       "categoria": "Interfaz",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Habilita un control de la interfaz para permitir interacción.",
       "params": [
         {
@@ -3349,51 +1789,6 @@
             "Default(21)"
           ],
           "ejemplo": "MES_TXT"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(21)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(21)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(21)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(21)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(21)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -3402,8 +1797,8 @@
       "version": "v7_0",
       "categoria": "Lista",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 4,
+      "paramsMax": 4,
       "descripcion": "Evalúa una expresión agregada o acumulativa sobre la lista.",
       "params": [
         {
@@ -3441,24 +1836,6 @@
             "Default(21)"
           ],
           "ejemplo": "SUM_SEL"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(21)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(21)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -3467,8 +1844,8 @@
       "version": "v7_0",
       "categoria": "Transacciones y tablas",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Asigna un título identificativo a la transacción en curso.",
       "params": [
         {
@@ -3479,51 +1856,6 @@
             "Default(21)"
           ],
           "ejemplo": "\"Auto punteo de \" + #CTA_NOM"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(21)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(21)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(21)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(21)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(21)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -3533,72 +1865,17 @@
       "categoria": "Interfaz",
       "esContenedor": false,
       "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMax": 0,
       "descripcion": "Acepta y guarda el formulario en edición cerrándolo.",
-      "params": [
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(20)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(20)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(20)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(20)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(20)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(20)"
-          ],
-          "ejemplo": ""
-        }
-      ]
+      "params": []
     },
     "Seleccionar ficha de la lista": {
       "nombre": "Seleccionar ficha de la lista",
       "version": "v7_0",
       "categoria": "Lista",
       "esContenedor": true,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Establece la ficha seleccionada de la lista según un criterio dado.",
       "params": [
         {
@@ -3609,51 +1886,6 @@
             "Default(29)"
           ],
           "ejemplo": "4ekd5b99.vca@AUX_C_AGB_PRO_C"
-        },
-        {
-          "props": [
-            "Identificador de variable local booleana de retorno de ok (opcional)"
-          ],
-          "edits": [
-            "Default(29)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(29)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(29)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(29)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(29)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -3662,8 +1894,8 @@
       "version": "v7_0",
       "categoria": "Cestas",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Vacía todos los registros acumulados en la cesta.",
       "params": [
         {
@@ -3674,51 +1906,6 @@
             "Default(33)"
           ],
           "ejemplo": ".cesta"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(33)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(33)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(33)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(33)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(33)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -3727,8 +1914,8 @@
       "version": "v16_v22",
       "categoria": "Interfaz",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 2,
+      "paramsMax": 2,
       "descripcion": "Aplica dinámicamente estilos CSS (QSS) a un control o al formulario.",
       "params": [
         {
@@ -3748,42 +1935,6 @@
             "Default(19)"
           ],
           "ejemplo": "CSS"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(19)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(19)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(19)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(19)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -3792,8 +1943,8 @@
       "version": "v28_v32",
       "categoria": "Informes personalizables",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 2,
+      "paramsMax": 3,
       "descripcion": "Muestra en pantalla la vista previa de un informe personalizable.",
       "params": [
         {
@@ -3822,33 +1973,6 @@
             "Default(21)"
           ],
           "ejemplo": "\"PAR_COD_ENT:\" + PAR_COD_ENT +"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(21)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(21)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(21)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -3857,8 +1981,8 @@
       "version": "v7_0",
       "categoria": "Ficha",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Verifica si algún campo de la ficha ha sido alterado.",
       "params": [
         {
@@ -3869,51 +1993,6 @@
             "Default(18)"
           ],
           "ejemplo": "CHG_REG"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(18)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(18)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(18)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(18)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(18)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -3923,72 +2002,17 @@
       "categoria": "Interfaz",
       "esContenedor": false,
       "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMax": 0,
       "descripcion": "Cancela la edición del formulario en pantalla cerrándolo.",
-      "params": [
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(19)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(19)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(19)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(19)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(19)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(19)"
-          ],
-          "ejemplo": ""
-        }
-      ]
+      "params": []
     },
     "Informe personalizable: Imprimir informe": {
       "nombre": "Informe personalizable: Imprimir informe",
       "version": "v28_v32",
       "categoria": "Informes personalizables",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 3,
+      "paramsMax": 4,
       "descripcion": "Envía directamente a la impresora un informe personalizable.",
       "params": [
         {
@@ -4020,30 +2044,12 @@
         },
         {
           "props": [
-            "Identificador de impresora lógica (opcional)"
-          ],
-          "edits": [
-            "Default(18)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
             "Parámetros en formato id1:valor1|id2:valor2... (opcional)"
           ],
           "edits": [
             "Default(18)"
           ],
           "ejemplo": "\"PAR_COD_ENT:\" + PAR_COD_ENT +"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(18)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -4052,8 +2058,8 @@
       "version": "v16_v22",
       "categoria": "Interfaz",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Hace visible una acción en toolbars y menús.",
       "params": [
         {
@@ -4064,51 +2070,6 @@
             "Default(15)"
           ],
           "ejemplo": "4ekd5b99.vca@FIR_SIG_CHG_SIG_E"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(15)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(15)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(15)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(15)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(15)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -4117,7 +2078,7 @@
       "version": "v7_0",
       "categoria": "Ficheros y sistema",
       "esContenedor": true,
-      "paramsMin": 0,
+      "paramsMin": 5,
       "paramsMax": 5,
       "descripcion": "Abre un fichero físico en disco para lectura o escritura (contenedor).",
       "params": [
@@ -4173,8 +2134,8 @@
       "version": "v23_v27",
       "categoria": "Arrays",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 5,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Vacía por completo todos los elementos de un array.",
       "params": [
         {
@@ -4185,42 +2146,6 @@
             "Default(14)"
           ],
           "ejemplo": "FCH_VTO_DIA_PAG"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(14)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(14)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(14)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(14)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -4229,8 +2154,8 @@
       "version": "v7_0",
       "categoria": "Cestas",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Elimina una lista de registros de la cesta.",
       "params": [
         {
@@ -4241,51 +2166,6 @@
             "Default(16)"
           ],
           "ejemplo": ".cesta_PGC_C_NO_ASI"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(16)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(16)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(16)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(16)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(16)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -4294,8 +2174,8 @@
       "version": "v28_v32",
       "categoria": "Informes personalizables",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 4,
+      "paramsMax": 4,
       "descripcion": "Genera un informe personalizable y lo exporta a PDF u otro formato.",
       "params": [
         {
@@ -4333,24 +2213,6 @@
             "Default(12)"
           ],
           "ejemplo": "SND_DIR_PDF + \"/\" + NOM_INF + "
-        },
-        {
-          "props": [
-            "Parámetros en formato id1:valor1|id2:valor2... (opcional)"
-          ],
-          "edits": [
-            "Default(12)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(12)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -4359,8 +2221,8 @@
       "version": "v23_v27",
       "categoria": "Variables",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 4,
+      "paramsMax": 4,
       "descripcion": "Recupera un elemento de un array perteneciente a un objeto.",
       "params": [
         {
@@ -4398,24 +2260,6 @@
             "Default(12)"
           ],
           "ejemplo": "FCH_VTO"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(12)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(12)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -4424,8 +2268,8 @@
       "version": "v16_v22",
       "categoria": "Bases de datos externas",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 3,
+      "paramsMax": 3,
       "descripcion": "Lee el valor de una columna por índice en una fila SQL externa.",
       "params": [
         {
@@ -4454,33 +2298,6 @@
             "Default(24)"
           ],
           "ejemplo": "ID"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(24)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(24)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(24)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -4489,8 +2306,8 @@
       "version": "v7_0",
       "categoria": "Ficha",
       "esContenedor": true,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Abre un formulario modal para modificar el registro en curso.",
       "params": [
         {
@@ -4501,51 +2318,6 @@
             "Default(11)"
           ],
           "ejemplo": "4ekd5b99.vca@ART_M_EDT_MOV"
-        },
-        {
-          "props": [
-            "Identificador de variable local booleana de retorno de ok (opcional)"
-          ],
-          "edits": [
-            "Default(11)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(11)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(11)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(11)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(11)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -4554,8 +2326,8 @@
       "version": "v23_v27",
       "categoria": "Interfaz",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 3,
+      "paramsMax": 3,
       "descripcion": "Lee una variable local de la vista de datos activa.",
       "params": [
         {
@@ -4584,33 +2356,6 @@
             "Default(11)"
           ],
           "ejemplo": "ID_REG"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(11)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(11)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(11)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -4619,8 +2364,8 @@
       "version": "v16_v22",
       "categoria": "Interfaz",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Habilita una acción de la interfaz de usuario.",
       "params": [
         {
@@ -4631,51 +2376,6 @@
             "Default(11)"
           ],
           "ejemplo": "4ekd5b99.vca@FIR_SIG_CHG_SIG_E"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(11)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(11)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(11)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(11)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(11)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -4684,8 +2384,8 @@
       "version": "v16_v22",
       "categoria": "JSON",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 5,
+      "paramsMin": 2,
+      "paramsMax": 3,
       "descripcion": "Serializa el registro en curso a formato JSON.",
       "params": [
         {
@@ -4714,24 +2414,6 @@
             "Default(20)"
           ],
           "ejemplo": "OK"
-        },
-        {
-          "props": [
-            "Identificador de variable local alfabética de retorno de mensaje de error (opcional)"
-          ],
-          "edits": [
-            "Default(20)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(20)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -4740,8 +2422,8 @@
       "version": "v7_0",
       "categoria": "Ficha",
       "esContenedor": true,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Ejecuta subinstrucciones sobre una ficha residente en memoria.",
       "params": [
         {
@@ -4752,51 +2434,6 @@
             "Default(10)"
           ],
           "ejemplo": "drop"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(10)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(10)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(10)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(10)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(10)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -4805,7 +2442,7 @@
       "version": "v7_0",
       "categoria": "Diálogos y avisos",
       "esContenedor": false,
-      "paramsMin": 0,
+      "paramsMin": 3,
       "paramsMax": 5,
       "descripcion": "Abre un diálogo solicitando la introducción de un valor al usuario.",
       "params": [
@@ -4861,8 +2498,8 @@
       "version": "v7_0",
       "categoria": "Ficheros y sistema",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 2,
       "descripcion": "Abre el diálogo nativo del sistema para seleccionar un fichero.",
       "params": [
         {
@@ -4882,42 +2519,6 @@
             "Default(9)"
           ],
           "ejemplo": "OK"
-        },
-        {
-          "props": [
-            "Fórmula de filtro de archivos (opcional)"
-          ],
-          "edits": [
-            "Default(9)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            "Fórmula de senda de  por defecto (opcional)"
-          ],
-          "edits": [
-            "Default(9)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(9)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(9)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -4926,8 +2527,8 @@
       "version": "v23_v27",
       "categoria": "Interfaz",
       "esContenedor": true,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Abre un localizador visual para seleccionar un registro (contenedor).",
       "params": [
         {
@@ -4938,51 +2539,6 @@
             "Default(9)"
           ],
           "ejemplo": "4ekd5b99.vca@AUX_C"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(9)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(9)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(9)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(9)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(9)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -4991,8 +2547,8 @@
       "version": "v16_v22",
       "categoria": "JSON",
       "esContenedor": true,
-      "paramsMin": 0,
-      "paramsMax": 7,
+      "paramsMin": 4,
+      "paramsMax": 6,
       "descripcion": "Deserializa un array JSON y crea/modifica una lista de registros (contenedor).",
       "params": [
         {
@@ -5056,8 +2612,8 @@
       "version": "v7_0",
       "categoria": "Ficheros y sistema",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 2,
+      "paramsMax": 3,
       "descripcion": "Lee la siguiente línea de texto del fichero abierto.",
       "params": [
         {
@@ -5086,33 +2642,6 @@
             "Default(11)"
           ],
           "ejemplo": "OK"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(11)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(11)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(11)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -5121,8 +2650,8 @@
       "version": "v16_v22",
       "categoria": "Interfaz",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 5,
+      "paramsMin": 2,
+      "paramsMax": 2,
       "descripcion": "Cambia la vista activa dentro de un control alternador de vistas.",
       "params": [
         {
@@ -5142,33 +2671,6 @@
             "Default(6)"
           ],
           "ejemplo": "49  4ekd5b99.vca@DOC_EXP_W_LIS"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(6)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(6)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(6)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -5177,8 +2679,8 @@
       "version": "v7_0",
       "categoria": "Ficheros y sistema",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Borra permanentemente un archivo del sistema de ficheros.",
       "params": [
         {
@@ -5189,51 +2691,6 @@
             "Default(6)"
           ],
           "ejemplo": "FIC_DEL"
-        },
-        {
-          "props": [
-            "Identificador de variable local booleana de retorno de ok (opcional)"
-          ],
-          "edits": [
-            "Default(6)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(6)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(6)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(6)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(6)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -5242,8 +2699,8 @@
       "version": "v7_0",
       "categoria": "Ficheros y sistema",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 2,
+      "paramsMax": 2,
       "descripcion": "Crea una nueva carpeta en la ruta de disco indicada.",
       "params": [
         {
@@ -5263,42 +2720,6 @@
             "Default(8)"
           ],
           "ejemplo": "0"
-        },
-        {
-          "props": [
-            "Identificador de variable local booleana de retorno de ok (opcional)"
-          ],
-          "edits": [
-            "Default(8)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(8)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(8)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(8)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -5307,8 +2728,8 @@
       "version": "v28_v32",
       "categoria": "Sistema y diagnóstico",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 2,
       "descripcion": "Configura el comportamiento del cliente ante pérdidas temporales de red.",
       "params": [
         {
@@ -5328,42 +2749,6 @@
             "Default(6)"
           ],
           "ejemplo": "jsonGetValue(JSON_APP_CFG_W, \""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(6)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(6)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(6)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(6)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -5372,8 +2757,8 @@
       "version": "v7_0",
       "categoria": "Ficheros y sistema",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 2,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Ejecuta un comando en el shell del sistema operativo.",
       "params": [
         {
@@ -5384,15 +2769,6 @@
             "Default(6)"
           ],
           "ejemplo": "\"open -a \\cNumbers\\c \" + FILEN"
-        },
-        {
-          "props": [
-            "Identificador de variable local numérica de retorno (opcional)"
-          ],
-          "edits": [
-            "Default(6)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -5401,8 +2777,8 @@
       "version": "v7_0",
       "categoria": "Ficheros y sistema",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Copia una cadena de texto en el portapapeles del sistema operativo.",
       "params": [
         {
@@ -5413,51 +2789,6 @@
             "Default(5)"
           ],
           "ejemplo": "#TOK"
-        },
-        {
-          "props": [
-            "Tipo MIME (opcional)"
-          ],
-          "edits": [
-            "Default(5)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(5)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(5)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(5)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(5)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -5466,58 +2797,13 @@
       "version": "v7_0",
       "categoria": "Ficheros y sistema",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Cierra ordenadamente el cliente vClient y finaliza la sesión.",
       "params": [
         {
           "props": [
             "Fórmula valor de retorno de la aplicación"
-          ],
-          "edits": [
-            "Default(5)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(5)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(5)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(5)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(5)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
           ],
           "edits": [
             "Default(5)"
@@ -5531,8 +2817,8 @@
       "version": "v7_0",
       "categoria": "Ficheros y sistema",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 2,
+      "paramsMax": 3,
       "descripcion": "Escribe una línea de texto en el fichero abierto.",
       "params": [
         {
@@ -5561,33 +2847,6 @@
             "Default(5)"
           ],
           "ejemplo": "SEG"
-        },
-        {
-          "props": [
-            "No incluir salto de línea (opcional)"
-          ],
-          "edits": [
-            "Default(5)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(5)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(5)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -5596,8 +2855,8 @@
       "version": "v7_0",
       "categoria": "Transacciones y tablas",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Elimina todos los registros de una tabla en la base de datos.",
       "params": [
         {
@@ -5608,51 +2867,6 @@
             "Default(5)"
           ],
           "ejemplo": "4ek4uta3.vcd@IA_CHT_MSG_TMP_M"
-        },
-        {
-          "props": [
-            "Identificador de variable local booleana de retorno de ok (opcional)"
-          ],
-          "edits": [
-            "Default(5)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(5)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(5)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(5)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(5)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -5661,8 +2875,8 @@
       "version": "v7_0",
       "categoria": "Ficha",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Vacia o resetea el contenido de un campo de tipo objeto/binario.",
       "params": [
         {
@@ -5673,51 +2887,6 @@
             "Default(5)"
           ],
           "ejemplo": "FIR_BAS_64"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(5)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(5)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(5)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(5)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(5)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -5727,72 +2896,17 @@
       "categoria": "Transacciones y tablas",
       "esContenedor": false,
       "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMax": 0,
       "descripcion": "Fuerza el inicio o persistencia de una transacción en el vServer.",
-      "params": [
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(5)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(5)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(5)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(5)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(5)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(5)"
-          ],
-          "ejemplo": ""
-        }
-      ]
+      "params": []
     },
     "Configuración del sistema: Escribir cadena de texto": {
       "nombre": "Configuración del sistema: Escribir cadena de texto",
       "version": "v16_v22",
       "categoria": "Configuración del sistema",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 4,
+      "paramsMax": 4,
       "descripcion": "Escribe una clave de configuración en el registro/configuración del sistema.",
       "params": [
         {
@@ -5830,24 +2944,6 @@
             "Default(5)"
           ],
           "ejemplo": "#VAL"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(5)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(5)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -5856,8 +2952,8 @@
       "version": "v16_v22",
       "categoria": "Configuración del sistema",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 3,
+      "paramsMax": 3,
       "descripcion": "Elimina una clave o entrada de configuración del sistema.",
       "params": [
         {
@@ -5886,33 +2982,6 @@
             "Default(6)"
           ],
           "ejemplo": "#CLA"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(6)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(6)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(6)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -5921,8 +2990,8 @@
       "version": "v7_0",
       "categoria": "Cestas",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Elimina un registro específico de la cesta.",
       "params": [
         {
@@ -5933,51 +3002,6 @@
             "Default(7)"
           ],
           "ejemplo": ".cesta"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(7)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(7)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(7)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(7)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(7)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -5986,8 +3010,8 @@
       "version": "v16_v22",
       "categoria": "Red y HTTP",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 2,
+      "paramsMax": 3,
       "descripcion": "Descarga un archivo remoto vía HTTP/HTTPS y lo almacena localmente.",
       "params": [
         {
@@ -6016,33 +3040,6 @@
             "Default(4)"
           ],
           "ejemplo": "OK"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(4)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(4)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(4)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -6051,8 +3048,8 @@
       "version": "v7_0",
       "categoria": "Control de flujo",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Pausa la ejecución del proceso durante el número de milisegundos indicado.",
       "params": [
         {
@@ -6063,51 +3060,6 @@
             "Default(6)"
           ],
           "ejemplo": "3000"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(6)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(6)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(6)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(6)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(6)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -6116,8 +3068,8 @@
       "version": "v7_0",
       "categoria": "Ficheros y sistema",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 2,
       "descripcion": "Abre el diálogo nativo del sistema para seleccionar una carpeta.",
       "params": [
         {
@@ -6137,42 +3089,6 @@
             "Default(4)"
           ],
           "ejemplo": "OK"
-        },
-        {
-          "props": [
-            "Fórmula de senda de  por defecto (opcional)"
-          ],
-          "edits": [
-            "Default(4)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(4)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(4)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(4)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -6181,8 +3097,8 @@
       "version": "v7_0",
       "categoria": "Binarios e imágenes",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 3,
+      "paramsMin": 2,
+      "paramsMax": 2,
       "descripcion": "Carga una imagen en un campo de tipo dibujo.",
       "params": [
         {
@@ -6202,15 +3118,6 @@
             "Default(4)"
           ],
           "ejemplo": "SND"
-        },
-        {
-          "props": [
-            "Identificador de variable local booleana de retorno de ok (opcional)"
-          ],
-          "edits": [
-            "Default(4)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -6219,8 +3126,8 @@
       "version": "v28_v32",
       "categoria": "Sistema y diagnóstico",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 3,
       "descripcion": "Devuelve resolución, DPI y dimensiones de la pantalla actual.",
       "params": [
         {
@@ -6249,33 +3156,6 @@
             "Default(4)"
           ],
           "ejemplo": "ALT_PAN"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(4)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(4)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(4)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -6284,8 +3164,8 @@
       "version": "v16_v22",
       "categoria": "Interfaz",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 4,
       "descripcion": "Configura la geometría (x, y, ancho, alto) de un dock.",
       "params": [
         {
@@ -6323,24 +3203,6 @@
             "Default(4)"
           ],
           "ejemplo": "300"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(4)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(4)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -6349,7 +3211,7 @@
       "version": "v16_v22",
       "categoria": "Interfaz",
       "esContenedor": false,
-      "paramsMin": 0,
+      "paramsMin": 2,
       "paramsMax": 2,
       "descripcion": "Comprueba si un panel dock está visible en pantalla.",
       "params": [
@@ -6378,7 +3240,7 @@
       "version": "v16_v22",
       "categoria": "Interfaz",
       "esContenedor": false,
-      "paramsMin": 0,
+      "paramsMin": 1,
       "paramsMax": 1,
       "descripcion": "Oculta un panel acoplable (dock) en el marco.",
       "params": [
@@ -6398,8 +3260,8 @@
       "version": "v16_v22",
       "categoria": "JSON",
       "esContenedor": true,
-      "paramsMin": 0,
-      "paramsMax": 7,
+      "paramsMin": 4,
+      "paramsMax": 6,
       "descripcion": "Deserializa un objeto JSON y actualiza o crea un registro (contenedor).",
       "params": [
         {
@@ -6484,7 +3346,7 @@
       "categoria": "Interfaz",
       "esContenedor": false,
       "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMax": 2,
       "descripcion": "Configura una capa overlay o indicador de carga sobre un control visual.",
       "params": [
         {
@@ -6504,42 +3366,6 @@
             "Default(4)"
           ],
           "ejemplo": "POR_TRS"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(4)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(4)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(4)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(4)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -6548,8 +3374,8 @@
       "version": "v33_v36",
       "categoria": "Interfaz",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 3,
       "descripcion": "Aplica estilos visuales personalizados a fechas concretas en un control calendario.",
       "params": [
         {
@@ -6560,15 +3386,6 @@
             "Default(4)"
           ],
           "ejemplo": ".34  4ekd5b99.vca@AUTOEXEC"
-        },
-        {
-          "props": [
-            "Fórmula de color de fondo (opcional)"
-          ],
-          "edits": [
-            "Default(4)"
-          ],
-          "ejemplo": ""
         },
         {
           "props": [
@@ -6587,24 +3404,6 @@
             "Default(4)"
           ],
           "ejemplo": "\"H\""
-        },
-        {
-          "props": [
-            "Día/Mes del año (opcional)"
-          ],
-          "edits": [
-            "Default(4)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            "Fecha o array de fechas (opcional)"
-          ],
-          "edits": [
-            "Default(4)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -6613,8 +3412,8 @@
       "version": "v16_v22",
       "categoria": "JSON",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 2,
+      "paramsMax": 2,
       "descripcion": "Serializa la lista completa de registros a un array JSON.",
       "params": [
         {
@@ -6634,42 +3433,6 @@
             "Default(9)"
           ],
           "ejemplo": "JSON_LST"
-        },
-        {
-          "props": [
-            "Identificador de variable local booleana de retorno de ok (opcional)"
-          ],
-          "edits": [
-            "Default(9)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            "Identificador de variable local alfabética de retorno de mensaje de error (opcional)"
-          ],
-          "edits": [
-            "Default(9)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(9)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(9)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -6678,58 +3441,13 @@
       "version": "v16_v22",
       "categoria": "Interfaz",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Desmarca todos los registros seleccionados en el control visual.",
       "params": [
         {
           "props": [
             "Identificador de control"
-          ],
-          "edits": [
-            "Default(8)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(8)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(8)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(8)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(8)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
           ],
           "edits": [
             "Default(8)"
@@ -6743,58 +3461,13 @@
       "version": "v16_v22",
       "categoria": "Interfaz",
       "esContenedor": true,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Carga en el scope el registro actualmente editado en una fila de rejilla (contenedor).",
       "params": [
         {
           "props": [
             "Identificador de control"
-          ],
-          "edits": [
-            "Default(6)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(6)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(6)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(6)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(6)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
           ],
           "edits": [
             "Default(6)"
@@ -6808,8 +3481,8 @@
       "version": "v16_v22",
       "categoria": "Configuración del sistema",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 4,
+      "paramsMax": 4,
       "descripcion": "Lee una clave de configuración del sistema.",
       "params": [
         {
@@ -6847,24 +3520,6 @@
             "Default(4)"
           ],
           "ejemplo": "RES"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(4)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(4)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -6873,8 +3528,8 @@
       "version": "v7_0",
       "categoria": "Ficheros y sistema",
       "esContenedor": true,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 4,
+      "paramsMax": 4,
       "descripcion": "Itera sobre los archivos y carpetas de un directorio (contenedor).",
       "params": [
         {
@@ -6912,24 +3567,6 @@
             "Default(3)"
           ],
           "ejemplo": "FIC_DEL"
-        },
-        {
-          "props": [
-            "Identificador de variable local booleana de retorno que indica si es directorio (opcional)"
-          ],
-          "edits": [
-            "Default(3)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            "Identificador de variable local booleana de retorno que indica si es solo lectura (opcional)"
-          ],
-          "edits": [
-            "Default(3)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -6938,8 +3575,8 @@
       "version": "v7_0",
       "categoria": "Ficheros y sistema",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 2,
+      "paramsMax": 2,
       "descripcion": "Comprueba si existe un archivo en la ruta física especificada.",
       "params": [
         {
@@ -6959,42 +3596,6 @@
             "Default(3)"
           ],
           "ejemplo": "OK"
-        },
-        {
-          "props": [
-            "Identificador de variable local numérica de retorno de tamaño en bytes (opcional)"
-          ],
-          "edits": [
-            "Default(3)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(3)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(3)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(3)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -7003,7 +3604,7 @@
       "version": "v7_0",
       "categoria": "Ficheros y sistema",
       "esContenedor": false,
-      "paramsMin": 0,
+      "paramsMin": 1,
       "paramsMax": 2,
       "descripcion": "Establece el directorio de trabajo activo del proceso.",
       "params": [
@@ -7032,8 +3633,8 @@
       "version": "v7_0",
       "categoria": "Lista",
       "esContenedor": true,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Divide la lista en bloques de tamaño fijo de N registros (contenedor).",
       "params": [
         {
@@ -7044,51 +3645,6 @@
             "Default(3)"
           ],
           "ejemplo": "1000"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(3)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(3)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(3)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(3)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(3)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -7107,8 +3663,8 @@
       "version": "v7_0",
       "categoria": "Binarios e imágenes",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 2,
+      "paramsMax": 2,
       "descripcion": "Carga un archivo binario externo en un campo objeto.",
       "params": [
         {
@@ -7128,42 +3684,6 @@
             "Default(3)"
           ],
           "ejemplo": "EML_ADJUNTO_SENDA_UNO"
-        },
-        {
-          "props": [
-            "Identificador de variable local booleana de retorno de ok (opcional)"
-          ],
-          "edits": [
-            "Default(3)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(3)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(3)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(3)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -7172,8 +3692,8 @@
       "version": "v7_0",
       "categoria": "Transacciones y tablas",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 3,
+      "paramsMax": 3,
       "descripcion": "Compacta físicamente el archivo de datos de una tabla.",
       "params": [
         {
@@ -7202,33 +3722,6 @@
             "Default(3)"
           ],
           "ejemplo": "POR_UMB_COM"
-        },
-        {
-          "props": [
-            "Identificador de variable local booleana de retorno de ok (opcional)"
-          ],
-          "edits": [
-            "Default(3)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(3)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(3)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -7237,8 +3730,8 @@
       "version": "v7_0",
       "categoria": "Ficha",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 2,
+      "paramsMax": 2,
       "descripcion": "Comprueba si existe ya una clave coincidente en un índice dado.",
       "params": [
         {
@@ -7258,42 +3751,6 @@
             "Default(3)"
           ],
           "ejemplo": "EXI"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(3)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(3)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(3)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(3)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -7302,8 +3759,8 @@
       "version": "v7_0",
       "categoria": "Ficheros y sistema",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 2,
+      "paramsMax": 2,
       "descripcion": "Elimina un directorio del sistema de ficheros.",
       "params": [
         {
@@ -7323,42 +3780,6 @@
             "Default(2)"
           ],
           "ejemplo": "0"
-        },
-        {
-          "props": [
-            "Identificador de variable local booleana de retorno de ok (opcional)"
-          ],
-          "edits": [
-            "Default(2)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(2)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(2)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(2)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -7368,7 +3789,7 @@
       "categoria": "Interfaz",
       "esContenedor": false,
       "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMax": 5,
       "descripcion": "Ajusta la posición y dimensiones de un cuadro de diálogo.",
       "params": [
         {
@@ -7415,15 +3836,6 @@
             "Default(3)"
           ],
           "ejemplo": "720"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(3)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -7432,58 +3844,13 @@
       "version": "v7_0",
       "categoria": "Ficha",
       "esContenedor": true,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Traspasa datos de una ficha origen a una ficha destino mediante un tubo.",
       "params": [
         {
           "props": [
             "Identificador de tubo de ficha"
-          ],
-          "edits": [
-            "Default(2)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(2)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(2)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(2)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(2)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
           ],
           "edits": [
             "Default(2)"
@@ -7497,8 +3864,8 @@
       "version": "v23_v27",
       "categoria": "Arrays",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 2,
+      "paramsMax": 2,
       "descripcion": "Devuelve el número total de elementos contenidos en un array.",
       "params": [
         {
@@ -7518,42 +3885,6 @@
             "Default(2)"
           ],
           "ejemplo": "NUM_FIC"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(2)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(2)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(2)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(2)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -7562,7 +3893,7 @@
       "version": "v16_v22",
       "categoria": "Interfaz",
       "esContenedor": false,
-      "paramsMin": 0,
+      "paramsMin": 1,
       "paramsMax": 1,
       "descripcion": "Muestra un panel acoplable (dock) en el marco de la aplicación.",
       "params": [
@@ -7582,8 +3913,8 @@
       "version": "v7_0",
       "categoria": "Cestas",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Resta de la lista actual los registros existentes en la cesta.",
       "params": [
         {
@@ -7594,51 +3925,6 @@
             "Default(2)"
           ],
           "ejemplo": ".cesta_API"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(2)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(2)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(2)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(2)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(2)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -7647,8 +3933,8 @@
       "version": "v16_v22",
       "categoria": "Bases de datos externas",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 3,
+      "paramsMax": 3,
       "descripcion": "Crea un manejador de consulta o comando SQL externo.",
       "params": [
         {
@@ -7677,33 +3963,6 @@
             "Default(2)"
           ],
           "ejemplo": "\"Golden_Velneo\""
-        },
-        {
-          "props": [
-            "Fórmula de opciones de conexión (opcional)"
-          ],
-          "edits": [
-            "Default(2)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            "Fórmula del servidor (dominio_ip:puerto, puerto opcional) (opcional)"
-          ],
-          "edits": [
-            "Default(2)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            "Fórmula de puerto (opcional)"
-          ],
-          "edits": [
-            "Default(2)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -7712,8 +3971,8 @@
       "version": "v16_v22",
       "categoria": "Bases de datos externas",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 2,
+      "paramsMax": 5,
       "descripcion": "Abre una conexión con una base de datos externa vía ODBC/SQL.",
       "params": [
         {
@@ -7760,15 +4019,6 @@
             "Default(2)"
           ],
           "ejemplo": "ERR"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(2)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -7777,8 +4027,8 @@
       "version": "v16_v22",
       "categoria": "Bases de datos externas",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 3,
+      "paramsMax": 3,
       "descripcion": "Ejecuta una sentencia SQL en la base de datos externa conectada.",
       "params": [
         {
@@ -7807,33 +4057,6 @@
             "Default(2)"
           ],
           "ejemplo": "V_FILAS"
-        },
-        {
-          "props": [
-            "Fórmula de condición para activar el modo solo avanzar para las filas obtenidas (opcional)"
-          ],
-          "edits": [
-            "Default(2)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(2)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(2)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -7843,72 +4066,17 @@
       "categoria": "Bases de datos externas",
       "esContenedor": true,
       "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMax": 0,
       "descripcion": "Itera sobre los resultados de una consulta SQL externa (contenedor).",
-      "params": [
-        {
-          "props": [
-            "Manejador de base de datos externa"
-          ],
-          "edits": [
-            "Default(2)"
-          ],
-          "ejemplo": ".ext_2"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(2)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(2)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(2)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(2)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(2)"
-          ],
-          "ejemplo": ""
-        }
-      ]
+      "params": []
     },
     "Get atributos del fichero": {
       "nombre": "Get atributos del fichero",
       "version": "v7_0",
       "categoria": "Ficheros y sistema",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 2,
+      "paramsMax": 4,
       "descripcion": "Obtiene propiedades de un fichero (tamaño, fechas de modificación).",
       "params": [
         {
@@ -7946,24 +4114,6 @@
             "Default(2)"
           ],
           "ejemplo": "EML_ADJUNTO_TAM"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(2)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(2)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -7972,8 +4122,8 @@
       "version": "v7_0",
       "categoria": "Binarios e imágenes",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 2,
+      "paramsMax": 2,
       "descripcion": "Exporta el contenido de un campo objeto binario a un archivo en disco.",
       "params": [
         {
@@ -7993,42 +4143,6 @@
             "Default(2)"
           ],
           "ejemplo": "#SND_CACHE"
-        },
-        {
-          "props": [
-            "Identificador de variable local booleana de retorno de ok (opcional)"
-          ],
-          "edits": [
-            "Default(2)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(2)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(2)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(2)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -8038,7 +4152,7 @@
       "categoria": "Interfaz",
       "esContenedor": false,
       "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMax": 2,
       "descripcion": "Obtiene las coordenadas y tamaño de un cuadro de diálogo.",
       "params": [
         {
@@ -8058,42 +4172,6 @@
             "Default(1)"
           ],
           "ejemplo": "Y"
-        },
-        {
-          "props": [
-            "Ancho: Variable local de retorno (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            "Alto: Variable local de retorno (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -8102,8 +4180,8 @@
       "version": "v7_0",
       "categoria": "Cestas",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 2,
+      "paramsMax": 2,
       "descripcion": "Comprueba si la ficha actual se encuentra almacenada en la cesta.",
       "params": [
         {
@@ -8123,42 +4201,6 @@
             "Default(1)"
           ],
           "ejemplo": "POS"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -8167,8 +4209,8 @@
       "version": "v23_v27",
       "categoria": "Hardware y sensores",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Recupera la latitud, longitud y precisión de la última posición GPS conocida.",
       "params": [
         {
@@ -8179,51 +4221,6 @@
             "Default(1)"
           ],
           "ejemplo": "GPS_POS"
-        },
-        {
-          "props": [
-            "Identificador de variable local tiempo de retorno de tiempo UTC (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            "Identificador de variable local numérica de retorno de modo de GPS (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            "Identificador de variable local array numérica de retorno de precisión horizontal, vertical y número de satélites (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -8233,72 +4230,17 @@
       "categoria": "Hardware y sensores",
       "esContenedor": false,
       "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMax": 0,
       "descripcion": "Detiene la toma de coordenadas GPS en el dispositivo.",
-      "params": [
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        }
-      ]
+      "params": []
     },
     "GPS: Iniciar": {
       "nombre": "GPS: Iniciar",
       "version": "v23_v27",
       "categoria": "Hardware y sensores",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 2,
       "descripcion": "Activa la recepción de coordenadas de geolocalización GPS en el dispositivo.",
       "params": [
         {
@@ -8312,48 +4254,12 @@
         },
         {
           "props": [
-            "Intervalo de actualización (milisegundos) (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
             "Identificador de variable local booleana de retorno del resultado del sistema de geoposicionamiento (opcional)"
           ],
           "edits": [
             "Default(1)"
           ],
           "ejemplo": "OK"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -8362,8 +4268,8 @@
       "version": "v23_v27",
       "categoria": "Interfaz",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 2,
+      "paramsMax": 2,
       "descripcion": "Configura animaciones de transición en controles visuales.",
       "params": [
         {
@@ -8383,42 +4289,6 @@
             "Default(1)"
           ],
           "ejemplo": "MS"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -8427,8 +4297,8 @@
       "version": "v16_v22",
       "categoria": "Binarios e imágenes",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 3,
+      "paramsMin": 2,
+      "paramsMax": 2,
       "descripcion": "Decodifica una cadena Base64 y la guarda en un campo objeto binario.",
       "params": [
         {
@@ -8448,15 +4318,6 @@
             "Default(1)"
           ],
           "ejemplo": "IMG"
-        },
-        {
-          "props": [
-            "Extensión de formato de imagen (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -8465,8 +4326,8 @@
       "version": "v28_v32",
       "categoria": "Informes personalizables",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 5,
+      "paramsMax": 5,
       "descripcion": "Exporta los datos de un informe personalizable a fichero de texto.",
       "params": [
         {
@@ -8513,15 +4374,6 @@
             "Default(1)"
           ],
           "ejemplo": "SND + \"/\" + INF_ID + \".txt\""
-        },
-        {
-          "props": [
-            "Parámetros en formato id1:valor1|id2:valor2... (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -8530,8 +4382,8 @@
       "version": "v7_0",
       "categoria": "Cestas",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Realiza la intersección entre la lista actual y la cesta.",
       "params": [
         {
@@ -8542,51 +4394,6 @@
             "Default(1)"
           ],
           "ejemplo": ".cestaTRO"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -8595,7 +4402,7 @@
       "version": "v28_v32",
       "categoria": "Protocolo TCP",
       "esContenedor": false,
-      "paramsMin": 0,
+      "paramsMin": 1,
       "paramsMax": 2,
       "descripcion": "Detiene un servicio de sockets TCP previamente iniciado.",
       "params": [
@@ -8627,70 +4434,15 @@
       "paramsMin": 0,
       "paramsMax": 0,
       "descripcion": "Interrumpe y sale inmediatamente del bucle For o de recorrido actual.",
-      "params": [
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        }
-      ]
+      "params": []
     },
     "Informe personalizable: Editar informe": {
       "nombre": "Informe personalizable: Editar informe",
       "version": "v28_v32",
       "categoria": "Informes personalizables",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 1,
+      "paramsMax": 1,
       "descripcion": "Abre el diseñador visual integrado para modificar la plantilla del informe.",
       "params": [
         {
@@ -8701,51 +4453,6 @@
             "Default(1)"
           ],
           "ejemplo": "SND"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -8754,7 +4461,7 @@
       "version": "v28_v32",
       "categoria": "Protocolo TCP",
       "esContenedor": false,
-      "paramsMin": 0,
+      "paramsMin": 1,
       "paramsMax": 2,
       "descripcion": "Inicia un servidor de sockets TCP a la escucha en un puerto.",
       "params": [
@@ -8783,7 +4490,7 @@
       "version": "v28_v32",
       "categoria": "Protocolo TCP",
       "esContenedor": false,
-      "paramsMin": 0,
+      "paramsMin": 2,
       "paramsMax": 2,
       "descripcion": "Comprueba si el servidor TCP está activo y escuchando conexiones.",
       "params": [
@@ -8813,64 +4520,9 @@
       "categoria": "Ficha",
       "esContenedor": true,
       "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMax": 0,
       "descripcion": "Elimina de la base de datos el registro actualmente seleccionado.",
-      "params": [
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        }
-      ]
+      "params": []
     },
     "Recorrer lista eliminando fichas sin desactualizar": {
       "nombre": "Recorrer lista eliminando fichas sin desactualizar",
@@ -8878,64 +4530,9 @@
       "categoria": "Lista",
       "esContenedor": true,
       "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMax": 0,
       "descripcion": "Elimina registros de la lista sin disparar desactualización de acumuladores.",
-      "params": [
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        }
-      ]
+      "params": []
     },
     "Protocolo TCP: Recibir línea": {
       "nombre": "Protocolo TCP: Recibir línea",
@@ -8943,8 +4540,9 @@
       "categoria": "Protocolo TCP",
       "esContenedor": false,
       "paramsMin": 0,
-      "paramsMax": 6,
-      "descripcion": "Lee una línea de texto recibida a través de la conexión TCP."
+      "paramsMax": 0,
+      "descripcion": "Lee una línea de texto recibida a través de la conexión TCP.",
+      "params": []
     },
     "Protocolo TCP: Recibir buffer": {
       "nombre": "Protocolo TCP: Recibir buffer",
@@ -8952,8 +4550,9 @@
       "categoria": "Protocolo TCP",
       "esContenedor": false,
       "paramsMin": 0,
-      "paramsMax": 6,
-      "descripcion": "Recibe un buffer de bytes binarios a través del socket TCP."
+      "paramsMax": 0,
+      "descripcion": "Recibe un buffer de bytes binarios a través del socket TCP.",
+      "params": []
     },
     "Protocolo TCP: Enviar buffer": {
       "nombre": "Protocolo TCP: Enviar buffer",
@@ -8961,16 +4560,17 @@
       "categoria": "Protocolo TCP",
       "esContenedor": false,
       "paramsMin": 0,
-      "paramsMax": 6,
-      "descripcion": "Envía un buffer de bytes binarios a través del socket TCP."
+      "paramsMax": 0,
+      "descripcion": "Envía un buffer de bytes binarios a través del socket TCP.",
+      "params": []
     },
     "Renombrar directorio": {
       "nombre": "Renombrar directorio",
       "version": "v7_0",
       "categoria": "Ficheros y sistema",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 2,
+      "paramsMax": 2,
       "descripcion": "Cambia el nombre o ruta de un directorio en disco.",
       "params": [
         {
@@ -8990,42 +4590,6 @@
             "Default(1)"
           ],
           "ejemplo": ""
-        },
-        {
-          "props": [
-            "Identificador de variable local booleana de retorno de ok (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -9034,8 +4598,8 @@
       "version": "v7_0",
       "categoria": "Ficheros y sistema",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 2,
+      "paramsMax": 4,
       "descripcion": "Ejecuta un programa externo del sistema operativo de forma asíncrona.",
       "params": [
         {
@@ -9073,24 +4637,6 @@
             "Default(1)"
           ],
           "ejemplo": "ENVIO"
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -9099,8 +4645,8 @@
       "version": "v23_v27",
       "categoria": "Arrays",
       "esContenedor": false,
-      "paramsMin": 0,
-      "paramsMax": 6,
+      "paramsMin": 2,
+      "paramsMax": 2,
       "descripcion": "Ordena los elementos de un array en memoria.",
       "params": [
         {
@@ -9120,42 +4666,6 @@
             "Default(1)"
           ],
           "ejemplo": "0"
-        },
-        {
-          "props": [
-            "Identificador de variable local booleana de retorno de ok (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
-        },
-        {
-          "props": [
-            " (opcional)"
-          ],
-          "edits": [
-            "Default(1)"
-          ],
-          "ejemplo": ""
         }
       ]
     },
@@ -9165,8 +4675,9 @@
       "categoria": "Arrays",
       "esContenedor": false,
       "paramsMin": 0,
-      "paramsMax": 6,
-      "descripcion": "Inserta un elemento en una posición específica del array."
+      "paramsMax": 0,
+      "descripcion": "Inserta un elemento en una posición específica del array.",
+      "params": []
     },
     "Array: eliminar item": {
       "nombre": "Array: eliminar item",
@@ -9174,8 +4685,9 @@
       "categoria": "Arrays",
       "esContenedor": false,
       "paramsMin": 0,
-      "paramsMax": 6,
-      "descripcion": "Elimina el elemento ubicado en una posición dada del array."
+      "paramsMax": 0,
+      "descripcion": "Elimina el elemento ubicado en una posición dada del array.",
+      "params": []
     },
     "Array: crear desde cadena": {
       "nombre": "Array: crear desde cadena",
@@ -9183,8 +4695,9 @@
       "categoria": "Arrays",
       "esContenedor": false,
       "paramsMin": 0,
-      "paramsMax": 6,
-      "descripcion": "Convierte una cadena delimitada (e.g. CSV) en un array."
+      "paramsMax": 0,
+      "descripcion": "Convierte una cadena delimitada (e.g. CSV) en un array.",
+      "params": []
     },
     "Array: convertir a cadena": {
       "nombre": "Array: convertir a cadena",
@@ -9192,8 +4705,9 @@
       "categoria": "Arrays",
       "esContenedor": false,
       "paramsMin": 0,
-      "paramsMax": 6,
-      "descripcion": "Concatena los elementos de un array en una cadena con delimitador."
+      "paramsMax": 0,
+      "descripcion": "Concatena los elementos de un array en una cadena con delimitador.",
+      "params": []
     },
     "Fichero: grabar fichero": {
       "nombre": "Fichero: grabar fichero",
@@ -9201,8 +4715,9 @@
       "categoria": "Ficheros y sistema",
       "esContenedor": false,
       "paramsMin": 0,
-      "paramsMax": 3,
-      "descripcion": "Guarda un bloque de datos completo en un fichero en disco."
+      "paramsMax": 0,
+      "descripcion": "Guarda un bloque de datos completo en un fichero en disco.",
+      "params": []
     },
     "Fichero: leer fichero": {
       "nombre": "Fichero: leer fichero",
@@ -9210,8 +4725,9 @@
       "categoria": "Ficheros y sistema",
       "esContenedor": false,
       "paramsMin": 0,
-      "paramsMax": 3,
-      "descripcion": "Lee el contenido completo de un fichero a una variable."
+      "paramsMax": 0,
+      "descripcion": "Lee el contenido completo de un fichero a una variable.",
+      "params": []
     },
     "Fichero: cerrar": {
       "nombre": "Fichero: cerrar",
@@ -9219,8 +4735,9 @@
       "categoria": "Ficheros y sistema",
       "esContenedor": false,
       "paramsMin": 0,
-      "paramsMax": 1,
-      "descripcion": "Cierra el manejador de fichero abierto en disco."
+      "paramsMax": 0,
+      "descripcion": "Cierra el manejador de fichero abierto en disco.",
+      "params": []
     },
     "Ejecutar script (filescript)": {
       "nombre": "Ejecutar script (filescript)",
@@ -9228,8 +4745,9 @@
       "categoria": "Scripting",
       "esContenedor": false,
       "paramsMin": 0,
-      "paramsMax": 1,
-      "descripcion": "Ejecuta un script JavaScript cargado desde un fichero."
+      "paramsMax": 0,
+      "descripcion": "Ejecuta un script JavaScript cargado desde un fichero.",
+      "params": []
     }
   }
 }
