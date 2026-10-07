@@ -278,7 +278,7 @@ function validarInstrucciones(instrs, opciones) {
 
         var comando = String(item.comando || "").trim();
         var nivel = typeof item.nivel === "number" ? item.nivel : (parseInt(item.nivel, 10) || 0);
-        var params = Array.isArray(item.params) ? item.params : [];
+        var params = Array.isArray(item.params) ? item.params : (Array.isArray(item.parametros) ? item.parametros : []);
         var disabled = item.disabled === true;
 
         if (!comando) {

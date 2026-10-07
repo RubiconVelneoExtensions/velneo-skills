@@ -1,0 +1,115 @@
+{
+  "objeto": "PRO_ALM_VERIF_CREAR",
+  "tipo": "proceso",
+  "tablaEntrada": "",
+  "tablaSalida": "",
+  "variables": [
+    {
+      "id": "OK",
+      "tipo": "Booleano"
+    },
+    {
+      "id": "TOTAL_ACTIVOS",
+      "tipo": "Numérico"
+    },
+    {
+      "id": "ID_NUEVO",
+      "tipo": "Numérico"
+    }
+  ],
+  "instrucciones": [
+    {
+      "comando": "Rem",
+      "parametros": [
+        "Proceso de alta y verificación de almacén principal"
+      ],
+      "nivel": 0
+    },
+    {
+      "comando": "Set",
+      "parametros": [
+        "OK",
+        "1"
+      ],
+      "nivel": 0
+    },
+    {
+      "comando": "Cargar lista",
+      "parametros": [
+        "ALM_M@velneo_verp_2_dat",
+        "ID"
+      ],
+      "nivel": 0
+    },
+    {
+      "comando": "Recorrer lista solo lectura",
+      "parametros": [],
+      "nivel": 1
+    },
+    {
+      "comando": "If",
+      "parametros": [
+        "#OFF = 0"
+      ],
+      "nivel": 2
+    },
+    {
+      "comando": "Set",
+      "parametros": [
+        "TOTAL_ACTIVOS",
+        "TOTAL_ACTIVOS + 1"
+      ],
+      "nivel": 3
+    },
+    {
+      "comando": "If",
+      "parametros": [
+        "TOTAL_ACTIVOS = 0"
+      ],
+      "nivel": 0
+    },
+    {
+      "comando": "Crear nueva ficha en memoria",
+      "parametros": [
+        "hAlm",
+        "ALM_M@velneo_verp_2_dat"
+      ],
+      "nivel": 1
+    },
+    {
+      "comando": "Modificar campo",
+      "parametros": [
+        "NAME",
+        "\"ALMACÉN CENTRAL\""
+      ],
+      "nivel": 2
+    },
+    {
+      "comando": "Alta de ficha",
+      "parametros": [
+        "hAlm"
+      ],
+      "nivel": 2
+    },
+    {
+      "comando": "Set",
+      "parametros": [
+        "ID_NUEVO",
+        "#ID"
+      ],
+      "nivel": 3
+    },
+    {
+      "comando": "Else",
+      "parametros": [],
+      "nivel": 0
+    },
+    {
+      "comando": "Rem",
+      "parametros": [
+        "Ya existen almacenes activos configurados"
+      ],
+      "nivel": 1
+    }
+  ]
+}

@@ -322,7 +322,7 @@ def validate(
                 "Asigna una variable de salida (ej: OK = 1) y deja terminar el proceso."
             )
 
-        params = item.get("params")
+        params = item.get("params") if "params" in item else item.get("parametros")
         if not isinstance(params, list):
             errors.append(f"{prefix}: 'params' debe ser un array de strings")
             params = []
