@@ -1,0 +1,6 @@
+interface:
+  display_name: "Velneo Code Generation"
+  short_description: "Generate valid Velneo process JSON"
+  default_prompt: "Use $velneo-code-generation to generate or validate a Velneo process with correct command parameters and nesting levels."
+policy:
+  allow_implicit_invocation: true
