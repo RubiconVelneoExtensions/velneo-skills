@@ -370,6 +370,8 @@ function validarInstrucciones(instrs, opciones) {
                 advertencias = advertencias.concat(verificarSintaxisFormula(valParam, pref + " (fórmula)"));
             } else if (normCmd === "set dato de retorno" && p === 0) {
                 advertencias = advertencias.concat(verificarSintaxisFormula(valParam, pref + " (retorno)"));
+            } else if (normCmd === "pregunta" && (p === 0 || p === 2)) {
+                advertencias = advertencias.concat(verificarSintaxisFormula(valParam, pref + (p === 0 ? " (mensaje)" : " (título)")));
             } else if (((normCmd === "cargar lista" || normCmd === "cesta: crear cesta local" || normCmd === "vaciar tabla") && p === 0) ||
                        (normCmd === "crear nueva ficha en memoria" && p === 1) ||
                        ((normCmd === "crear o modificar ficha desde json" || normCmd === "crear o modificar lista desde json") && p === 2)) {

@@ -123,6 +123,22 @@ function runTests() {
     ]);
     assertTrue(resTablaInv.advertencias.some(w => w.includes('Selector de tabla')), "Advierte sobre selector de tabla no canónico ('TABLA@ALIAS')");
 
+    // 3g. Firma de Pregunta (2 a 3 parámetros)
+    const resPregunta2 = api.validarInstrucciones([
+        { comando: "Pregunta", params: ["\"¿Desea continuar?\"", "OK"], nivel: 0 }
+    ]);
+    assertTrue(resPregunta2.valido, "Pregunta con 2 parámetros es válida");
+
+    const resPregunta3 = api.validarInstrucciones([
+        { comando: "Pregunta", params: ["\"¿Desea continuar?\"", "OK", "\"Confirmación\""], nivel: 0 }
+    ]);
+    assertTrue(resPregunta3.valido, "Pregunta con 3 parámetros (título opcional) es válida");
+
+    const resPregunta4 = api.validarInstrucciones([
+        { comando: "Pregunta", params: ["\"¿Desea continuar?\"", "OK", "\"Confirmación\"", "\"EXTRA\""], nivel: 0 }
+    ]);
+    assertTrue(!resPregunta4.valido && resPregunta4.errores.some(e => e.includes('3')), "Pregunta con 4 parámetros es rechazada por exceder máximo");
+
     // ─────────────────────────────────────────────────────────────
     // Test 4: Fixture de Proceso Real
     // ─────────────────────────────────────────────────────────────

@@ -1483,7 +1483,7 @@
       "categoria": "Diálogos y avisos",
       "esContenedor": false,
       "paramsMin": 2,
-      "paramsMax": 2,
+      "paramsMax": 3,
       "descripcion": "Muestra un diálogo de confirmación con opciones Sí/No al usuario.",
       "params": [
         {
@@ -1503,6 +1503,15 @@
             "Default(47)"
           ],
           "ejemplo": "OK"
+        },
+        {
+          "props": [
+            "Fórmula de título opcional (opcional)"
+          ],
+          "edits": [
+            "Default(47)"
+          ],
+          "ejemplo": "\"Confirmación\""
         }
       ]
     },
