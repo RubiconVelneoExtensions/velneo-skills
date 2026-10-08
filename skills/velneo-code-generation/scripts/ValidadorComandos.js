@@ -286,6 +286,14 @@ function validarInstrucciones(instrs, opciones) {
             continue;
         }
 
+        var normCmd = _normalizar(comando);
+
+        // Prohibición explícita de comando erróneo común
+        if (normCmd === "set retorno proceso = si") {
+            errores.push(pref + ": 'Set retorno proceso = SI' NO EXISTE en Velneo. Asigna una variable de salida (ej: OK = 1) y deja terminar el proceso.");
+            sugerencias.push(pref + ": Eliminar 'Set retorno proceso = SI' y usar asignación a variable de salida.");
+        }
+
         // 1. Verificación del comando en el Catálogo Oficial Velneo
         var cmdInfo = buscarComando(comando);
         if (!cmdInfo) {
@@ -298,7 +306,7 @@ function validarInstrucciones(instrs, opciones) {
                 txtSugerencia = " ¿Quisiste decir " + nombresSugeridos + "?";
                 sugerencias.push(pref + ": Para '" + comando + "', se sugiere " + nombresSugeridos);
             }
-            errores.push(pref + ": Comando no reconocido en la documentación de Velneo: '" + comando + "'." + txtSugerencia);
+            errores.push(pref + ": El comando no existe en el catálogo canónico de Velneo: '" + comando + "'." + txtSugerencia);
         } else {
             if (opciones.versionMin && cmdInfo.version !== opciones.versionMin) {
                 advertencias.push(pref + ": El comando '" + cmdInfo.nombre + "' requiere " + cmdInfo.version + " (filtro activo: " + opciones.versionMin + ").");
@@ -324,7 +332,6 @@ function validarInstrucciones(instrs, opciones) {
         }
 
         // 3. Reglas de Else / Else if
-        var normCmd = _normalizar(comando);
         if (normCmd === "else" || normCmd === "else if") {
             var previoEnNivel = ultimoEnNivel[nivel];
             if (previoEnNivel === "rem") {

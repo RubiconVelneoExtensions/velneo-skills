@@ -28,12 +28,9 @@ Existen dos vías compatibles para aplicar el código generado:
 1. Escribir el array JSON directamente en `target-instr.json` dentro de la carpeta de la extensión Code Sync elegida (`vdevelop-code-sync` o `vdevelop-code-sync-escritorio-secundario`).
 2. Validar el fichero ejecutando:
    ```bash
-   python scripts/validate_velneo_json.py target-instr.json
-   ```
-   o bien:
-   ```bash
    node validador.js target-instr.json
    ```
+   *(o `python scripts/validate_velneo_json.py target-instr.json` mediante el puente compatible).*
 3. Ejecutar el motor de inyección de pulsaciones (SendKeys) en vDevelop.
 
 ---
@@ -123,13 +120,17 @@ Equivalente JSON:
 
 ## 🔍 Validación Previa
 
-Antes de confirmar cualquier código JSON, ejecutar la validación local:
-- En Python:
-  ```bash
-  python scripts/validate_velneo_json.py <fichero.json>
-  ```
-- En Node.js:
-  ```bash
-  node validador.js <fichero.json>
-  ```
-Ambos validadores comparten el catálogo oficial canónico y comprueban contenedores, saltos de nivel, adyacencia de `Else` y sintaxis de fórmulas.
+Antes de confirmar cualquier código JSON, ejecutar la validación local con el motor oficial:
+```bash
+node validador.js <fichero.json>
+```
+*(También disponible mediante `python scripts/validate_velneo_json.py <fichero.json>` a través del puente de compatibilidad).*
+
+El validador utiliza el catálogo canónico auditado (`catalogo_comandos_velneo.json`) y comprueba exhaustivamente:
+- Existencia y ortografía canónica de comandos con sugerencias difusas Levenshtein.
+- Conteo y tipado estricto de parámetros posicionales.
+- Contenedores y jerarquía estricta de niveles (`nivel`).
+- Adyacencia inmediata de `Else` / `Else if` a su `If`.
+- Dependencia de subprocesos tras `Cargar lista`.
+- Sintaxis de fórmulas Velneo (prohibición de `!=` y `==`, operadores relacionales y parentizado).
+- Selectores de tabla canónicos (`TABLA@ALIAS`).

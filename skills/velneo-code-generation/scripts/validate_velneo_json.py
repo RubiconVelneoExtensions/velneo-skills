@@ -1,31 +1,31 @@
 #!/usr/bin/env python3
-"""Validate the flat target JSON used by the Velneo Code IDE and Puente MCP.
+"""Compatibilidad hacia atrás: Envoltorio del Validador Oficial en JavaScript (Node.js).
 
-The validator checks the invariants that are easy for an LLM to get wrong:
-explicit levels, valid parent/child relationships, Else placement, string
-parameters, memory record scoping, and formula operators (!=, ==).
+El motor único canónico de validación de Velneo reside en JavaScript:
+  - ValidadorComandos.js (motor universal para vDevelop QML y Node.js)
+  - validador.js (CLI oficial y módulo Node.js)
 
-100% portable: dynamic catalog discovery, no hardcoded paths or usernames.
-Supports both catalogo_comandos_velneo.json (PuenteGuia) and catalogo_params.json.
+Este archivo se mantiene exclusivamente como puente de compatibilidad para pipelines
+o herramientas que invoquen Python en su entorno. Toda la validación delega
+directamente en el motor JavaScript.
 """
 
 from __future__ import annotations
 
 import argparse
-import difflib
 import json
 import os
-import re
+import subprocess
 import sys
 import unicodedata
 from pathlib import Path
 from typing import Any
 
 
-if hasattr(sys.stdout, "reconfigure"):
-    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
-if hasattr(sys.stderr, "reconfigure"):
-    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+SCRIPT_DIR = Path(__file__).resolve().parent
+VALIDATOR_JS = SCRIPT_DIR / "validador.js"
+CORE_JS = SCRIPT_DIR / "ValidadorComandos.js"
+CATALOGO_JSON = SCRIPT_DIR / "catalogo_comandos_velneo.json"
 
 
 def norm(value: str) -> str:
@@ -35,451 +35,109 @@ def norm(value: str) -> str:
     return " ".join(value.casefold().strip().split())
 
 
-# Contenedores mínimos de fallback si no se carga el catálogo completo
-DEFAULT_CONTAINERS = {
-    "if",
-    "else",
-    "else if",
-    "cargar lista",
-    "cargar plurales",
-    "crear nueva ficha en memoria",
-    "modificar ficha seleccionada",
-    "modificar ficha de maestro",
-    "recorrer lista solo lectura",
-    "recorrer lista lectura/escritura",
-    "recorrer lista eliminando fichas",
-    "recorrer lista eliminando fichas sin desactualizar",
-    "bd: recorrer lista"
-}
-
-
 def find_default_catalog() -> Path | None:
     """Dynamically resolve catalog file without hardcoded paths."""
-    # 1. Explicit environment variable if defined
+    if CATALOGO_JSON.is_file():
+        return CATALOGO_JSON
     env_cat = os.environ.get("VELNEO_CATALOG_PATH") or os.environ.get("VELNEO_CATALOG")
-    if env_cat:
-        p = Path(env_cat).resolve()
-        if p.is_file():
-            return p
-
-    script_dir = Path(__file__).resolve().parent
-
-    # 2. Relative candidates inside skill or parent extension (prioritizing rich 177 catalog)
-    candidates = [
-        # Rich 177-command official catalog from PuenteGuia
-        script_dir.parent / "catalogo_comandos_velneo.json",
-        script_dir.parent.parent / "catalogo_comandos_velneo.json",
-        script_dir.parent.parent.parent / "catalogo_comandos_velneo.json",
-        script_dir / "catalogo_comandos_velneo.json",
-        # Parameter injection catalogs (Code Sync)
-        script_dir / "catalogo_params.json",
-        script_dir.parent.parent / "motor" / "catalogo_params.json",
-        script_dir.parent.parent.parent / "motor" / "catalogo_params.json",
-        script_dir.parent.parent / "cobertura" / "catalogo-comandos-detalle.json",
-    ]
-
-    for c in candidates:
-        if c.is_file():
-            return c
-
-    # 3. Dynamic search in sibling extensions (vdevelop/extensions/*)
-    current = script_dir
-    for _ in range(5):
-        if current.name.lower() == "extensions":
-            pg = current / "PuenteGuia" / "catalogo_comandos_velneo.json"
-            if pg.is_file():
-                return pg
-            sync = current / "vdevelop-code-sync" / "motor" / "catalogo_params.json"
-            if sync.is_file():
-                return sync
-            sync_sec = current / "vdevelop-code-sync-escritorio-secundario" / "motor" / "catalogo_params.json"
-            if sync_sec.is_file():
-                return sync_sec
-            break
-        if current.parent == current:
-            break
-        current = current.parent
-
-    # 4. Standard cross-platform user profile fallbacks (dynamic, no fixed username)
-    home = Path.home()
-    user_candidates = [
-        home / "Velneo" / "vdevelop" / "extensions" / "PuenteGuia" / "catalogo_comandos_velneo.json",
-        home / "Velneo" / "vdevelop" / "extensions" / "vdevelop-code-sync" / "motor" / "catalogo_params.json",
-        home / "Velneo" / "vdevelop" / "extensions" / "vdevelop-code-sync-escritorio-secundario" / "motor" / "catalogo_params.json",
-        home / ".gemini" / "config" / "skills" / "velneo-code-generation" / "scripts" / "catalogo_params.json",
-    ]
-    for uc in user_candidates:
-        if uc.is_file():
-            return uc
-
+    if env_cat and Path(env_cat).is_file():
+        return Path(env_cat).resolve()
     return None
 
 
-def load_catalog(path: Path | None) -> tuple[dict[str, dict[str, Any]], set[str]]:
-    """Load command catalog from JSON. Supports PuenteGuia and Code Sync schemas.
-    
-    Returns:
-        catalog_dict: mapping normalized command name to metadata dict
-        extra_containers: set of normalized commands marked as containers
-    """
-    if path is None:
-        path = find_default_catalog()
-    if path is None or not path.is_file():
+def load_catalog(path: Path | None = None) -> tuple[dict[str, dict[str, Any]], set[str]]:
+    """Load command catalog from JSON for backward-compatible metadata inspection."""
+    target = path or find_default_catalog()
+    if not target or not target.is_file():
         return {}, set()
 
-    with path.open(encoding="utf-8") as fh:
+    with target.open(encoding="utf-8") as fh:
         raw = json.load(fh)
-
-    if not isinstance(raw, dict):
-        raise ValueError("El catálogo de comandos debe ser un objeto JSON")
 
     catalog_dict: dict[str, dict[str, Any]] = {}
     extra_containers: set[str] = set()
 
-    # Formato A: PuenteGuia (catalogo_comandos_velneo.json con {"comandos": {...}})
-    if "comandos" in raw and isinstance(raw["comandos"], dict):
-        for k, item in raw["comandos"].items():
-            if not isinstance(item, dict):
-                continue
-            name = item.get("nombre", k)
-            n_name = norm(name)
-            is_container = item.get("esContenedor", False)
-            if is_container:
-                extra_containers.add(n_name)
-
-            params_list = item.get("params", [])
-            p_max = item.get("paramsMax", len(params_list) if isinstance(params_list, list) else 6)
-            p_min = item.get("paramsMin", 0)
-
-            meta = {
-                "nombre": name,
-                "esContenedor": is_container,
-                "paramsMin": p_min,
-                "paramsMax": p_max,
-                "version": item.get("version", ""),
-                "categoria": item.get("categoria", ""),
-                "descripcion": item.get("descripcion", "")
-            }
-            catalog_dict[n_name] = meta
-            # También almacenar versión normalizada directa
-            catalog_dict[norm(k)] = meta
-
-    # Formato B: Code Sync (catalogo_params.json con {command: [pegar, f4, ...]})
-    else:
-        for k, v in raw.items():
-            if str(k).startswith("_"):
-                continue
-            n_name = norm(str(k))
-            p_len = len(v) if isinstance(v, list) else 6
-            meta = {
-                "nombre": str(k),
-                "esContenedor": n_name in CONTAINERS,
-                "paramsMin": 0,
-                "paramsMax": p_len,
-                "version": "",
-                "categoria": "",
-                "descripcion": ""
-            }
-            catalog_dict[n_name] = meta
+    cmds = raw.get("comandos", {}) if isinstance(raw, dict) else {}
+    for k, item in cmds.items():
+        if not isinstance(item, dict):
+            continue
+        name = item.get("nombre", k)
+        n_name = norm(name)
+        is_container = bool(item.get("esContenedor", False))
+        if is_container:
+            extra_containers.add(n_name)
+        catalog_dict[n_name] = {
+            "nombre": name,
+            "esContenedor": is_container,
+            "paramsMin": item.get("paramsMin", 0),
+            "paramsMax": item.get("paramsMax", 6),
+            "version": item.get("version", ""),
+            "categoria": item.get("categoria", "")
+        }
 
     return catalog_dict, extra_containers
 
 
-def get_items(raw: Any) -> list[Any]:
+def get_items(raw: Any) -> list[dict[str, Any]]:
+    """Extract flat instruction items from common container formats."""
     if isinstance(raw, list):
-        return raw
+        return [i for i in raw if isinstance(i, dict)]
     if isinstance(raw, dict):
-        for key in ("instructions", "instrucciones", "lineas", "lines", "target"):
-            if isinstance(raw.get(key), list):
-                return raw[key]
-    raise ValueError("Se esperaba un array JSON de instrucciones o un objeto con campo 'instrucciones'")
-
-
-def check_formula_syntax(expr: str, prefix: str) -> list[str]:
-    """Check common Velneo formula syntax errors in a formula or condition string."""
-    warnings: list[str] = []
-
-    # 1. Invalid inequality operator (!= or <>)
-    if "!=" in expr:
-        warnings.append(
-            f"{prefix}: La fórmula usa '!=' ({expr!r}). En Velneo la desigualdad "
-            f"es estrictamente un único símbolo '!' (ej: '(A ! B)' o '(#EST ! \"A\")')."
-        )
-    if "<>" in expr:
-        warnings.append(
-            f"{prefix}: La fórmula usa '<>' ({expr!r}). En Velneo la desigualdad "
-            f"es estrictamente un único símbolo '!' (ej: '(A ! B)')."
-        )
-
-    # 2. Invalid equality operator (==)
-    clean_expr = re.sub(r'".*?"', '""', expr)
-    if "==" in clean_expr:
-        warnings.append(
-            f"{prefix}: La fórmula usa '==' ({expr!r}). En Velneo la igualdad "
-            f"es estrictamente un único símbolo '=' (ej: '(A = B)')."
-        )
-
-    # 3. Invalid combined comparison operators (<= and >=)
-    if "<=" in clean_expr:
-        warnings.append(
-            f"{prefix}: La fórmula usa '<=' ({expr!r}). En Velneo NO existe el operador '<='; "
-            f"debe expresarse como '((A < B) | (A = B))' o '!(A > B)'."
-        )
-    if ">=" in clean_expr:
-        warnings.append(
-            f"{prefix}: La fórmula usa '>=' ({expr!r}). En Velneo NO existe el operador '>='; "
-            f"debe expresarse como '((A > B) | (A = B))' o '!(A < B)'."
-        )
-
-    # 3. Parentheses balance
-    open_p = clean_expr.count("(")
-    close_p = clean_expr.count(")")
-    if open_p != close_p:
-        warnings.append(
-            f"{prefix}: Paréntesis desbalanceados en fórmula ({expr!r}): "
-            f"{open_p} '(' vs {close_p} ')'"
-        )
-
-    # 4. Strict left-to-right evaluation warning for unparenthesized logical operators
-    if re.search(r'[^()]+[&|][^()]+', clean_expr):
-        if ("=" in clean_expr or "!" in clean_expr or ">" in clean_expr or "<" in clean_expr) and ("&" in clean_expr or "|" in clean_expr):
-            if "(" not in clean_expr:
-                warnings.append(
-                    f"{prefix}: Condición compuesta sin paréntesis ({expr!r}). "
-                    f"Velneo evalúa estrictamente de izquierda a derecha sin precedencia: "
-                    f"parentiza siempre subcondiciones (ej: '((A = 1) & (B = 2))')."
-                )
-
-    return warnings
-
-
-def check_table_selector(val: str, prefix: str) -> list[str]:
-    """Check table selector format: must be TABLA@ALIAS (e.g. ENT_M_COS_TRJ@vERP_2_dat),
-    never PROYECTO.vcd@TABLA nor TABLA@PROYECTO.vcd."""
-    warnings: list[str] = []
-    s = str(val or "").strip()
-    if not s:
-        return warnings
-
-    if ".vcd@" in s.lower() or ".vca@" in s.lower():
-        warnings.append(
-            f"{prefix}: Selector de tabla invertido '{s}'. En Velneo el formato canónico "
-            f"es 'TABLA@ALIAS' (ej: 'ENT_M_COS_TRJ@vERP_2_dat'), nunca 'proyecto.vcd@TABLA'."
-        )
-    elif "@" in s:
-        tabla, _, alias = s.partition("@")
-        tabla = tabla.strip()
-        alias = alias.strip()
-        if not tabla or not alias:
-            warnings.append(
-                f"{prefix}: Selector de tabla mal formado '{s}'. Debe ser 'TABLA@ALIAS' (ej: 'ENT_M_COS_TRJ@vERP_2_dat')."
-            )
-        elif ".vcd" in alias.lower() or ".vca" in alias.lower() or "." in alias:
-            warnings.append(
-                f"{prefix}: El selector de tabla '{s}' incluye extensión o punto en el alias '{alias}'. "
-                f"Usa el alias limpio del proyecto (ej: '{tabla}@vERP_2_dat' o '{tabla}@velneo_verp_2_dat')."
-            )
-    elif s.startswith(("fun:", "$", "#", "~", "\"", "'")):
-        warnings.append(
-            f"{prefix}: El selector de tabla '{s}' no es un identificador válido; debe ser 'TABLA@ALIAS'."
-        )
-    return warnings
+        if "instrucciones" in raw and isinstance(raw["instrucciones"], list):
+            return [i for i in raw["instrucciones"] if isinstance(i, dict)]
+        if "instructions" in raw and isinstance(raw["instructions"], list):
+            return [i for i in raw["instructions"] if isinstance(i, dict)]
+    return []
 
 
 def validate(
-    items: list[Any],
-    catalog: dict[str, dict[str, Any]],
-    extra_containers: set[str] = set()
+    items: list[dict[str, Any]],
+    catalog: dict[str, Any] | None = None,
+    extra_containers: set[str] | None = None
 ) -> tuple[list[str], list[str], list[str]]:
-    """Validate Velneo instruction tree."""
-    errors: list[str] = []
-    warnings: list[str] = []
-    suggestions: list[str] = []
-    stack: list[str] = []
-    last_at_level: dict[int, str] = {}
-    last_item_at_level: dict[int, dict[str, Any]] = {}
+    """Delegate validation directly to the canonical JavaScript engine (ValidadorComandos.js)."""
+    core_path = CORE_JS.resolve().as_posix()
+    payload = json.dumps(items, ensure_ascii=False)
+    
+    node_code = (
+        f'const api = require("{core_path}");\n'
+        f'const instrs = JSON.parse(process.argv[1]);\n'
+        f'const res = api.validarInstrucciones(instrs);\n'
+        f'process.stdout.write(JSON.stringify({{\n'
+        f'    errores: res.errores,\n'
+        f'    advertencias: res.advertencias,\n'
+        f'    sugerencias: res.sugerencias\n'
+        f'}}));'
+    )
 
-    all_containers = (extra_containers or set()) | DEFAULT_CONTAINERS
-    all_cmd_names = [v["nombre"] for v in catalog.values()] if catalog else list(DEFAULT_CONTAINERS)
-
-    for index, item in enumerate(items, start=1):
-        prefix = f"Línea {index}"
-        if not isinstance(item, dict):
-            errors.append(f"{prefix}: La instrucción debe ser un objeto JSON")
-            continue
-
-        command = item.get("comando")
-        if not isinstance(command, str) or not command.strip():
-            errors.append(f"{prefix}: El nombre de 'comando' no puede estar vacío")
-            command_n = ""
-        else:
-            command_n = norm(command)
-
-        # Prohibición de comando inexistente
-        if command_n == "set retorno proceso = si":
-            errors.append(
-                f"{prefix}: 'Set retorno proceso = SI' NO EXISTE en Velneo. "
-                "Asigna una variable de salida (ej: OK = 1) y deja terminar el proceso."
-            )
-
-        params = item.get("params") if "params" in item else item.get("parametros")
-        if not isinstance(params, list):
-            errors.append(f"{prefix}: 'params' debe ser un array de strings")
-            params = []
-        else:
-            for pidx, value in enumerate(params, start=1):
-                if not isinstance(value, str):
-                    errors.append(f"{prefix}: params[{pidx}] debe ser string; se recibió {type(value).__name__}")
-                else:
-                    # Validar fórmulas en condiciones, sets o retornos
-                    if command_n in {"if", "else if"} and pidx == 1:
-                        warnings.extend(check_formula_syntax(value, f"{prefix} (condición)"))
-                    elif command_n in {"set", "modificar campo", "modificar campo solamente"} and pidx == 2:
-                        warnings.extend(check_formula_syntax(value, f"{prefix} (fórmula)"))
-                    elif command_n in {"set dato de retorno"} and pidx == 1:
-                        warnings.extend(check_formula_syntax(value, f"{prefix} (retorno)"))
-                    # Validar selectores de tabla (formato canónico TABLA@ALIAS)
-                    elif (command_n in {"cargar lista", "cesta: crear cesta local", "vaciar tabla"} and pidx == 1) or \
-                         (command_n in {"crear nueva ficha en memoria"} and pidx == 2) or \
-                         (command_n in {"crear o modificar ficha desde json", "crear o modificar lista desde json"} and pidx == 3):
-                        warnings.extend(check_table_selector(value, f"{prefix} (tabla)"))
-
-        level = item.get("nivel")
-        if isinstance(level, bool) or not isinstance(level, int) or level < 0:
-            errors.append(f"{prefix}: 'nivel' debe ser un entero >= 0")
-            level = 0
-
-        # Control de saltos de nivel
-        if level > len(stack):
-            errors.append(
-                f"{prefix}: Salto de nivel imposible a {level}; "
-                f"la profundidad máxima permitida anterior era {len(stack)}"
-            )
-        if level > 0:
-            parent = stack[level - 1] if level - 1 < len(stack) else ""
-            if parent not in all_containers:
-                errors.append(
-                    f"{prefix}: Nivel {level} tiene un padre no contenedor "
-                    f"'{parent or '<desconocido>'}' en nivel {level - 1}"
-                )
-
-        # Adyacencia de Else / Else if
-        if command_n in {"else", "else if"}:
-            previous = last_at_level.get(level)
-            if previous == "rem":
-                warnings.append(
-                    f"{prefix}: Hay una línea 'Rem' entre el If y este {command}. "
-                    "El motor Velneo exige adyacencia directa sin comentarios intermedios."
-                )
-            elif previous not in {"if", "else if"}:
-                errors.append(
-                    f"{prefix}: '{command}' debe seguir inmediatamente a un 'If' o 'Else if' en su mismo nivel"
-                )
-
-        # Regla de Cargar lista y sus hijos dependientes
-        previous_item = last_item_at_level.get(level)
-        if previous_item and previous_item.get("comando_n") == "cargar lista":
-            depends_on_loaded_list = False
-            if command_n == "if" and params:
-                first_param = params[0] if isinstance(params[0], str) else ""
-                depends_on_loaded_list = "syslistsize" in norm(first_param)
-            elif command_n in {
-                "recorrer lista solo lectura",
-                "recorrer lista lectura/escritura",
-                "recorrer lista eliminando fichas",
-                "recorrer lista eliminando fichas sin desactualizar",
-            }:
-                depends_on_loaded_list = True
-            if depends_on_loaded_list:
-                errors.append(
-                    f"{prefix}: {command} debe ser hijo de 'Cargar lista' en nivel {level + 1}; "
-                    "las instrucciones dependientes de la lista no pueden ser hermanas de la carga"
-                )
-
-        # Verificación contra el Catálogo de Comandos
-        if command_n and command_n not in all_containers and command_n not in catalog:
-            close_matches = difflib.get_close_matches(command, all_cmd_names, n=2, cutoff=0.6)
-            err_msg = f"{prefix}: El comando no existe en el catálogo canónico de Velneo: '{command}'"
-            if close_matches:
-                err_msg += f" (¿Quisiste decir '{close_matches[0]}' ?)"
-                suggestions.append(f"{prefix}: Sustituir '{command}' por '{close_matches[0]}'")
-            errors.append(err_msg)
-        elif command_n in catalog:
-            meta = catalog[command_n]
-            p_max = meta.get("paramsMax", 6)
-            p_min = meta.get("paramsMin", 0)
-            if p_max == 0 and len(params) > 0:
-                errors.append(
-                    f"{prefix}: '{command}' no admite parámetros ([]); se pasaron {len(params)}"
-                )
-            elif p_min > 0 and len(params) < p_min:
-                errors.append(
-                    f"{prefix}: '{command}' requiere al menos {p_min} parámetro(s); se pasaron {len(params)}"
-                )
-            elif p_max > 0 and len(params) == 0:
-                errors.append(
-                    f"{prefix}: '{command}' espera parámetros pero se pasaron 0"
-                )
-            elif len(params) > p_max:
-                errors.append(
-                    f"{prefix}: '{command}' tiene {len(params)} parámetros; el catálogo define un máximo estricto de {p_max}"
-                )
-
-        # Validación de parámetros enumerados de comandos estándar
-        if command_n == "mensaje" and len(params) > 1:
-            icon_val = str(params[1]).strip()
-            # En Velneo los iconos oficiales son "0"=info, "1"=pregunta, "2"=aviso, "3"=error
-            # o sus cadenas "Información", "Exclamación", "Stop"
-            valid_icons = {"0", "1", "2", "3", "informacion", "exclamacion", "stop", "pregunta"}
-            if icon_val and norm(icon_val) not in valid_icons:
-                warnings.append(
-                    f"{prefix}: Mensaje param 1 (Icono) debe ser uno de los estados oficiales ('0', '1', '2', '3' o 'Información', 'Exclamación', 'Stop'); se recibió {params[1]!r}"
-                )
-
-        # Mantener la pila de contenedores activos
-        stack = stack[:level]
-        stack.append(command_n)
-        for sibling_level in list(last_at_level):
-            if sibling_level > level:
-                del last_at_level[sibling_level]
-        if not item.get("disabled"):
-            last_at_level[level] = command_n
-            last_item_at_level[level] = {
-                "comando_n": command_n,
-                "params": params,
-            }
-
-    return errors, warnings, suggestions
+    try:
+        proc = subprocess.run(
+            ["node", "-e", node_code, payload],
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            check=False
+        )
+        if proc.returncode == 0 and proc.stdout:
+            data = json.loads(proc.stdout)
+            return data.get("errores", []), data.get("advertencias", []), data.get("sugerencias", [])
+        return [f"Error ejecutando validador JavaScript: {proc.stderr.strip()}"], [], []
+    except FileNotFoundError:
+        return ["Node.js no está disponible en PATH para ejecutar la validación."], [], []
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("json_file", type=Path, help="Fichero JSON de instrucciones a validar")
-    parser.add_argument("--catalog", type=Path, help="Ruta opcional a catalogo_comandos_velneo.json o catalogo_params.json")
-    args = parser.parse_args()
+    """CLI entry point delegating to validador.js."""
+    if not VALIDATOR_JS.is_file():
+        print(f"ERROR: No se encontró validador.js en {VALIDATOR_JS}", file=sys.stderr)
+        return 1
 
     try:
-        with args.json_file.open(encoding="utf-8") as fh:
-            raw = json.load(fh)
-        items = get_items(raw)
-        catalog, extra_containers = load_catalog(args.catalog)
-        errors, warnings, suggestions = validate(items, catalog, extra_containers)
-    except (OSError, json.JSONDecodeError, ValueError) as exc:
-        print(f"ERROR: {exc}")
+        proc = subprocess.run(["node", str(VALIDATOR_JS)] + sys.argv[1:])
+        return proc.returncode
+    except FileNotFoundError:
+        print("ERROR: Node.js no está instalado o no se encuentra en el PATH.", file=sys.stderr)
         return 2
-
-    for warning in warnings:
-        print(f"ADVERTENCIA: {warning}")
-    for error in errors:
-        print(f"ERROR: {error}")
-    for sug in suggestions:
-        print(f"SUGERENCIA: {sug}")
-
-    if errors:
-        print(f"INVÁLIDO: {len(errors)} error(es), {len(warnings)} advertencia(s)")
-        return 2
-    print(f"VÁLIDO: {len(items)} instrucción(es), {len(warnings)} advertencia(s)")
-    return 0
 
 
 if __name__ == "__main__":
