@@ -728,7 +728,7 @@
       "categoria": "Ficha",
       "esContenedor": true,
       "paramsMin": 2,
-      "paramsMax": 2,
+      "paramsMax": 3,
       "descripcion": "Crea un nuevo registro en memoria RAM para asignación previa al alta.",
       "params": [
         {
