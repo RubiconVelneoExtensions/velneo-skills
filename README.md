@@ -51,3 +51,11 @@ O mediante el puente en Python:
 ```powershell
 python tests/test_validador.py
 ```
+
+---
+
+## 🔐 Licencia y Confidencialidad
+
+Software propietario de uso exclusivo interno corporativo.  
+© 2021-2026 **Rubicon Consultoría y Desarrollo de Software S.L.U.** Todos los derechos reservados.  
+Consulta el archivo [LICENSE.md](LICENSE.md) para más detalles.
